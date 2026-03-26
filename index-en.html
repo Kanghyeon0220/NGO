@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lemonade For All Foundation | NGO for a Better World</title>
+  <style>
+    :root {
+      --primary-yellow: #FDFD96;
+      --accent-yellow: #FFEE8C;
+      --text-dark: #1A1A1A;
+      --text-gray: #555555;
+      --white: #FFFFFF;
+      --bg-light: #FFFEF0;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--text-dark);
+      line-height: 1.6;
+      background-color: var(--white);
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(15px);
+      z-index: 1000;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo { font-size: 1.4rem; font-weight: 800; display: flex; align-items: center; }
+    .logo span {
+      width: 14px; height: 14px; background: var(--primary-yellow);
+      border-radius: 50%; margin-right: 10px; border: 2.5px solid var(--text-dark);
+    }
+    .nav-right { display: flex; align-items: center; gap: 1.5rem; }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { font-weight: 600; font-size: 0.95rem; opacity: 0.7; transition: var(--transition); }
+    .nav-links a:hover { opacity: 1; color: #887a00; }
+    .cta-btn {
+      background: var(--text-dark); color: var(--primary-yellow);
+      padding: 0.7rem 1.4rem; border-radius: 50px; font-weight: 700; transition: var(--transition);
+    }
+    .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+    .lang-toggle {
+      cursor: pointer; background: var(--white); border: 2px solid var(--text-dark);
+      padding: 0.5rem 1rem; border-radius: 50px; font-weight: 800; font-size: 0.85rem;
+      display: flex; align-items: center; gap: 8px; transition: var(--transition);
+      text-decoration: none; color: var(--text-dark);
+    }
+    .lang-toggle:hover { background: var(--primary-yellow); transform: scale(1.05); }
+    .hero {
+      background: linear-gradient(135deg, var(--primary-yellow) 0%, #fff 100%);
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 2rem 60px;
+    }
+    .hero-content h1 { font-size: 4rem; font-weight: 900; margin-bottom: 1.5rem; letter-spacing: -1px; }
+    .hero-content p { font-size: 1.3rem; color: var(--text-gray); margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; }
+    .btn-primary {
+      background: var(--text-dark); color: var(--white);
+      padding: 1.2rem 2.5rem; border-radius: 12px; font-weight: 700; font-size: 1.1rem;
+    }
+    .btn-secondary {
+      background: var(--white); border: 2px solid var(--text-dark);
+      padding: 1.2rem 2.5rem; border-radius: 12px; font-weight: 700; font-size: 1.1rem;
+    }
+    section { padding: 100px 2rem; max-width: 1200px; margin: 0 auto; }
+    .section-header { text-align: center; margin-bottom: 4rem; }
+    .section-header h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .section-header p { color: var(--text-gray); font-size: 1.1rem; }
+    .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem; }
+    .project-card {
+      background: var(--white); border-radius: 24px; overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.05); transition: var(--transition);
+    }
+    .project-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+    .card-img { height: 240px; background: var(--accent-yellow); position: relative; }
+    .card-tag {
+      position: absolute; top: 1.5rem; left: 1.5rem;
+      background: var(--white); padding: 6px 14px; border-radius: 50px;
+      font-size: 0.85rem; font-weight: 800; color: #887a00;
+    }
+    .card-content { padding: 2rem; }
+    .card-content h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+    .card-content p { color: var(--text-gray); margin-bottom: 1.5rem; }
+    @media (max-width: 768px) {
+      .hero-content h1 { font-size: 2.5rem; }
+      .nav-links { display: none; }
+      .project-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <a href="index-en.html" class="logo"><span></span>Lemonade For All</a>
+      <div class="nav-right">
+        <nav class="nav-links">
+          <a href="#about">About Us</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Get Involved</a>
+        </nav>
+        <a href="index.html" class="lang-toggle">&#127464;&#127472; KOR</a>
+        <a href="donate-en.html" class="cta-btn">Donate</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>A Small Lemonade<br>Creates Sweet Change</h1>
+        <p>We are a high school nonprofit project team dreaming of a sustainable future and a warm community. We design a better world with a conscience that acts.</p>
+        <div class="hero-btns">
+          <a href="#projects" class="btn-primary">Explore Projects</a>
+          <a href="donate-en.html" class="btn-secondary">Join the Change</a>
+        </div>
+      </div>
+    </section>
+    <section id="projects">
+      <div class="section-header">
+        <h2>Ongoing Projects</h2>
+        <p>Check out our steps toward making the world a warmer place.</p>
+      </div>
+      <div class="project-grid">
+        <!-- Project 1 -->
+        <a href="project1-en.html" class="project-card">
+          <div class="card-img"><span class="card-tag">Environment</span></div>
+          <div class="card-content">
+            <h3>Urban Green Campaign</h3>
+            <p>Every weekend, we clean up the streets we walk. An environmental map-making project through plogging.</p>
+          </div>
+        </a>
+        <!-- Project 2 -->
+        <a href="project2-en.html" class="project-card">
+          <div class="card-img"><span class="card-tag">Education</span></div>
+          <div class="card-content">
+            <h3>The Dreaming Yellow Classroom</h3>
+            <p>We bring the joy of coding to children who lack access to digital education. A warm mentoring program that opens the future.</p>
+          </div>
+        </a>
+        <!-- Project 3 -->
+        <a href="project3-en.html" class="project-card">
+          <div class="card-img"><span class="card-tag">Campaign</span></div>
+          <div class="card-content">
+            <h3>Plastic Free Challenge</h3>
+            <p>Small daily actions add up to create massive change. An online/offline campaign spreading zero-waste culture.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
