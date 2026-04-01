@@ -1,288 +1,320 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lemonade For All Foundation | 더 나은 세상을 위한 NGO</title>
-  <style>
-    :root {
-      --primary: #FBF7D7;
-      --secondary: #887a00;
-      --accent: #FFD200;
-      --bg-warm: #FFFEF0;
-      --text-main: #1A1A1A;
-      --text-muted: #555555;
-      --white: #FFFFFF;
-      --shadow: 0 4px 20px rgba(0,0,0,0.06);
-      --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { 
-      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
-      color: var(--text-main);
-      line-height: 1.7;
-      background-color: var(--white);
-      word-break: keep-all;
-    }
-
-    /* Navigation */
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(20px);
-      z-index: 1000;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-    }
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1.2rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--text-main);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      letter-spacing: -0.5px;
-    }
-    .logo-dot {
-      width: 12px;
-      height: 12px;
-      background: var(--accent);
-      border-radius: 50%;
-      margin-right: 8px;
-    }
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-    }
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text-main);
-      font-weight: 600;
-      font-size: 1rem;
-      opacity: 0.6;
-      transition: var(--transition);
-    }
-    .nav-links a:hover { opacity: 1; color: var(--secondary); }
-    .nav-actions { display: flex; align-items: center; gap: 1.5rem; }
-    .btn-donate {
-      background: var(--text-main);
-      color: var(--primary);
-      padding: 0.75rem 1.8rem;
-      border-radius: 100px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: var(--transition);
-    }
-    .btn-donate:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
-    .lang-toggle {
-      font-weight: 700;
-      text-decoration: none;
-      color: var(--text-main);
-      font-size: 0.9rem;
-      padding: 0.5rem 1rem;
-      border: 1.5px solid var(--text-main);
-      border-radius: 50px;
-    }
-
-    /* Hero Section */
-    .hero {
-      padding-top: 160px;
-      padding-bottom: 100px;
-      background: linear-gradient(180deg, var(--bg-warm) 0%, #ffffff 100%);
-      text-align: center;
-    }
-    .hero-tag {
-      display: inline-block;
-      padding: 0.5rem 1.2rem;
-      background: var(--primary);
-      color: var(--secondary);
-      border-radius: 50px;
-      font-weight: 800;
-      font-size: 0.9rem;
-      margin-bottom: 2rem;
-    }
-    .hero h1 {
-      font-size: 4.5rem;
-      font-weight: 900;
-      line-height: 1.1;
-      margin-bottom: 2rem;
-      letter-spacing: -2px;
-    }
-    .hero p {
-      font-size: 1.4rem;
-      color: var(--text-muted);
-      max-width: 800px;
-      margin: 0 auto 3.5rem;
-    }
-
-    /* Stats Section */
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      max-width: 1000px;
-      margin: -60px auto 0;
-      background: var(--white);
-      padding: 3rem;
-      border-radius: 30px;
-      box-shadow: var(--shadow);
-      position: relative;
-      z-index: 10;
-    }
-    .stat-item h3 { font-size: 2.5rem; font-weight: 800; color: var(--secondary); }
-    .stat-item p { color: var(--text-muted); font-weight: 600; }
-
-    /* Projects */
-    section { padding: 120px 2rem; max-width: 1200px; margin: 0 auto; }
-    .section-title {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 4rem;
-    }
-    .section-title h2 { font-size: 2.8rem; font-weight: 900; letter-spacing: -1px; }
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 3rem;
-    }
-    .project-card {
-      background: var(--white);
-      border-radius: 32px;
-      overflow: hidden;
-      border: 1px solid rgba(0,0,0,0.05);
-      transition: var(--transition);
-      cursor: pointer;
-    }
-    .project-card:hover { transform: translateY(-12px); box-shadow: 0 30px 60px rgba(0,0,0,0.1); }
-    .card-image {
-      height: 280px;
-      background: var(--bg-warm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 4rem;
-    }
-    .card-body { padding: 2.5rem; }
-    .card-category {
-      text-transform: uppercase;
-      font-size: 0.85rem;
-      font-weight: 800;
-      color: var(--secondary);
-      margin-bottom: 1rem;
-      display: block;
-    }
-    .card-body h3 { font-size: 1.8rem; margin-bottom: 1rem; }
-    .card-body p { color: var(--text-muted); margin-bottom: 2rem; }
-    
-    .progress-bar {
-      height: 8px;
-      background: #eee;
-      border-radius: 10px;
-      overflow: hidden;
-      margin-bottom: 0.5rem;
-    }
-    .progress-fill { height: 100%; background: var(--accent); border-radius: 10px; }
-    .progress-text { display: flex; justify-content: space-between; font-weight: 700; font-size: 0.9rem; }
-
-    footer {
-      background: var(--text-main);
-      color: var(--white);
-      padding: 5rem 2rem;
-      text-align: center;
-    }
-
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 2.8rem; }
-      .stats { grid-template-columns: 1fr; gap: 2rem; margin-top: 2rem; }
-      .nav-links { display: none; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lemonade For All Foundation | 더 나은 세상을 위한 NGO</title>
+    <style>
+        :root {
+            --primary: #FBF7D7;
+            --secondary: #887a00;
+            --accent: #FFD200;
+            --bg-warm: #FFFEF0;
+            --text-main: #1A1A1A;
+            --text-muted: #555555;
+            --white: #FFFFFF;
+            --shadow: 0 4px 20px rgba(0,0,0,0.06);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            color: var(--text-main);
+            line-height: 1.7;
+            background-color: var(--white);
+            word-break: keep-all;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-main);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            letter-spacing: -0.5px;
+        }
+        .logo-dot {
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 1rem;
+            opacity: 0.6;
+            transition: var(--transition);
+        }
+        .nav-links a:hover { opacity: 1; color: var(--secondary); }
+        .nav-actions { display: flex; align-items: center; gap: 1.5rem; }
+        .btn-donate {
+            background: var(--text-main);
+            color: var(--primary);
+            padding: 0.75rem 1.8rem;
+            border-radius: 100px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .btn-donate:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+        .lang-toggle {
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            border: 1.5px solid var(--text-main);
+            border-radius: 50px;
+        }
+        .hero {
+            padding-top: 160px;
+            padding-bottom: 100px;
+            background: linear-gradient(180deg, var(--bg-warm) 0%, #ffffff 100%);
+            text-align: center;
+        }
+        .hero-tag {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            background: var(--primary);
+            color: var(--secondary);
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            letter-spacing: -2px;
+        }
+        .hero p {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto 3.5rem;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            max-width: 1000px;
+            margin: -60px auto 0;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 30px;
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 10;
+        }
+        .stat-item h3 { font-size: 2.5rem; font-weight: 800; color: var(--secondary); }
+        .stat-item p { color: var(--text-muted); font-weight: 600; }
+        section { padding: 100px 2rem; max-width: 1200px; margin: 0 auto; }
+        .section-title {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+        .section-title h2 { font-size: 2.8rem; font-weight: 900; letter-spacing: -1px; margin-bottom: 1rem; }
+        .intro-text {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+        .project-card {
+            background: var(--white);
+            border-radius: 32px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+        .project-card:hover { transform: translateY(-12px); box-shadow: 0 30px 60px rgba(0,0,0,0.1); }
+        .card-icon {
+            height: 200px;
+            background: var(--bg-warm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            color: var(--secondary);
+            font-size: 1.5rem;
+        }
+        .card-body { padding: 2.5rem; }
+        .card-category {
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .card-body h3 { font-size: 1.8rem; margin-bottom: 1rem; }
+        .card-body p { color: var(--text-muted); margin-bottom: 2rem; }
+        .progress-bar {
+            height: 8px;
+            background: #eee;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+        .progress-fill { height: 100%; background: var(--accent); border-radius: 10px; }
+        .progress-text { display: flex; justify-content: space-between; font-weight: 700; font-size: 0.9rem; }
+        footer {
+            background: var(--text-main);
+            color: var(--white);
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+        .footer-content { max-width: 800px; margin: 0 auto; }
+        .footer-logo { font-size: 1.8rem; font-weight: 800; margin-bottom: 1.5rem; display: block; color: var(--white); text-decoration: none; }
+        .contact-info { margin: 2rem 0; display: flex; flex-direction: column; gap: 0.5rem; }
+        .contact-info a { color: var(--primary); text-decoration: none; font-weight: 500; font-size: 1.1rem; }
+        .qr-code { width: 140px; height: 140px; background: white; margin: 2rem auto; padding: 10px; border-radius: 12px; }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.8rem; }
+            .stats { grid-template-columns: 1fr; gap: 2rem; margin-top: 2rem; }
+            .nav-links { display: none; }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="nav-container">
-      <a href="index.html" class="logo"><div class="logo-dot"></div>Lemonade For All</a>
-      <div class="nav-actions">
-        <nav class="nav-links">
-          <a href="#about">재단소개</a>
-          <a href="#projects">캠페인</a>
-          <a href="#news">소식</a>
-        </nav>
-        <a href="index-en.html" class="lang-toggle">EN</a>
-        <a href="donate.html" class="btn-donate">후원하기</a>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <span class="hero-tag">세상을 바꾸는 작은 실천</span>
-      <h1>작은 레모네이드가<br>만드는 큰 변화의 물결</h1>
-      <p>우리는 지속 가능한 미래를 꿈꾸는 청소년 NGO입니다. 투명한 후원과 혁신적인 프로젝트로 사회적 가치를 창출합니다.</p>
-      <div class="hero-stats">
-        <div class="stats">
-          <div class="stat-item"><h3>1,200+</h3><p>참여 봉사자</p></div>
-          <div class="stat-item"><h3>15</h3><p>진행 프로젝트</p></div>
-          <div class="stat-item"><h3>98%</h3><p>투명한 집행</p></div>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo"><div class="logo-dot"></div>Lemonade For All</a>
+            <div class="nav-actions">
+                <nav class="nav-links">
+                    <a href="#about">재단소개</a>
+                    <a href="#projects">캠페인</a>
+                    <a href="#contact">문의하기</a>
+                </nav>
+                <a href="index-en.html" class="lang-toggle">EN</a>
+                <a href="donate.html" class="btn-donate">후원하기</a>
+            </div>
         </div>
-      </div>
-    </section>
+    </header>
 
-    <section id="projects">
-      <div class="section-title">
-        <h2>우리의 활동</h2>
-        <a href="#" style="color: var(--secondary); font-weight: 700; text-decoration: none;">모든 프로젝트 보기 →</a>
-      </div>
-      
-      <div class="project-grid">
-        <div class="project-card">
-          <div class="card-image">🌱</div>
-          <div class="card-body">
-            <span class="card-category">환경</span>
-            <h3>도심 속 그린 캠페인</h3>
-            <p>우리가 걷는 거리를 직접 가꾸며 생태계 지도를 만듭니다. 미래 세대를 위한 깨끗한 지구 만들기.</p>
-            <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
-            <div class="progress-text"><span>75% 달성</span><span>목표 500만원</span></div>
-          </div>
+    <main>
+        <section class="hero">
+            <span class="hero-tag">세상을 바꾸는 작은 실천</span>
+            <h1>작은 레모네이드가<br>만드는 큰 변화의 물결</h1>
+            <p>우리는 지속 가능한 미래를 꿈꾸는 청소년 NGO입니다. 투명한 후원과 혁신적인 프로젝트로 사회적 가치를 창출합니다.</p>
+            <div class="hero-stats">
+                <div class="stats">
+                    <div class="stat-item"><h3>1,200+</h3><p>참여 봉사자</p></div>
+                    <div class="stat-item"><h3>15</h3><p>진행 프로젝트</p></div>
+                    <div class="stat-item"><h3>98%</h3><p>투명한 집행</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="section-title">
+                <h2>재단 소개</h2>
+                <p class="intro-text">
+                    Lemonade For All은 청소년들이 주도하여 세상을 더 따뜻하게 변화시키고자 노력하는 NGO입니다. 
+                    레모네이드 한 잔의 작은 정성이 모여 큰 기적을 만든다는 믿음으로 
+                    환경 보호, 교육 격차 해소, 그리고 지역 사회를 위한 다양한 프로젝트를 진행하고 있습니다.
+                </p>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="section-title">
+                <h2>진행 중인 캠페인</h2>
+            </div>
+            
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="card-icon"><div class="icon-circle">ECO</div></div>
+                    <div class="card-body">
+                        <span class="card-category">환경</span>
+                        <h3>도심 속 그린 캠페인</h3>
+                        <p>우리가 걷는 거리를 직접 가꾸며 생태계 지도를 만듭니다. 미래 세대를 위한 깨끗한 지구 만들기.</p>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
+                        <div class="progress-text"><span>75% 달성</span><span>목표 500만원</span></div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-icon"><div class="icon-circle">EDU</div></div>
+                    <div class="card-body">
+                        <span class="card-category">교육</span>
+                        <h3>꿈꾸는 노랑 교실</h3>
+                        <p>IT 교육 기회가 부족한 아이들에게 코딩과 디지털 역량을 선물합니다. 기회의 격차를 줄이는 혁신.</p>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 40%;"></div></div>
+                        <div class="progress-text"><span>40% 달성</span><span>목표 1,000만원</span></div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-icon"><div class="icon-circle">ZERO</div></div>
+                    <div class="card-body">
+                        <span class="card-category">캠페인</span>
+                        <h3>플라스틱 프리 챌린지</h3>
+                        <p>일상의 사소한 습관을 바꾸는 제로 웨이스트 운동. 기업과 사회의 변화를 이끌어내는 청소년의 목소리.</p>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
+                        <div class="progress-text"><span>90% 달성</span><span>목표 300만원</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <a href="#" class="footer-logo">Lemonade For All</a>
+            <p>더 나은 내일을 위해 함께 걸어주세요.</p>
+            
+            <div class="contact-info">
+                <a href="mailto:lfageneralx@gmail.com">lfageneralx@gmail.com</a>
+                <a href="https://www.instagram.com/lemonade_forall" target="_blank">Instagram: @lemonade_forall</a>
+            </div>
+
+            <div class="qr-code">
+                <img src="lemonade_forall_qr.jpg" alt="Instagram QR Code" style="max-width: 100%; height: auto;">
+            </div>
+            
+            <p style="opacity: 0.5; font-size: 0.9rem; margin-top: 2rem;">© 2026 Lemonade For All Foundation. 모든 권리 보유.</p>
         </div>
-
-        <div class="project-card">
-          <div class="card-image">💻</div>
-          <div class="card-body">
-            <span class="card-category">교육</span>
-            <h3>꿈꾸는 노랑 교실</h3>
-            <p>IT 교육 기회가 부족한 아이들에게 코딩과 디지털 역량을 선물합니다. 기회의 격차를 줄이는 혁신.</p>
-            <div class="progress-bar"><div class="progress-fill" style="width: 40%;"></div></div>
-            <div class="progress-text"><span>40% 달성</span><span>목표 1,000만원</span></div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="card-image">🥤</div>
-          <div class="card-body">
-            <span class="card-category">캠페인</span>
-            <h3>플라스틱 프리 챌린지</h3>
-            <p>일상의 사소한 습관을 바꾸는 제로 웨이스트 운동. 기업과 사회의 변화를 이끌어내는 청소년의 목소리.</p>
-            <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
-            <div class="progress-text"><span>90% 달성</span><span>목표 300만원</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2026 Lemonade For All Foundation. 모든 권리 보유.</p>
-  </footer>
+    </footer>
 </body>
 </html>
