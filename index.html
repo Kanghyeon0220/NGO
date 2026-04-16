@@ -272,7 +272,7 @@
         <nav class="nav-container">
             <a href="#" class="logo">Lemonade For All</a>
             
-            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+                        <button class="mobile-menu-btn" id="mobileMenuBtn">메뉴</button>
             
             <div class="nav-links" id="navLinks">
                 <a href="#about">재단 소개</a>
@@ -296,17 +296,17 @@
                 <h2 class="section-title">우리의 미션</h2>
                 <div class="mission-grid">
                     <div class="mission-card">
-                        <div class="mission-icon">🌱</div>
+                                            <div class="mission-icon"></div>
                         <h3>지속가능한 환경</h3>
                         <p>미래 세대를 위한 깨끗한 환경과 생태계 보존을 위해 행동합니다.</p>
                     </div>
                     <div class="mission-card">
-                        <div class="mission-icon">📚</div>
+                                            <div class="mission-icon"></div>
                         <h3>평등한 교육</h3>
                         <p>모든 아이들이 질 높은 교육을 받을 수 있도록 지원합니다.</p>
                     </div>
                     <div class="mission-card">
-                        <div class="mission-icon">🤝</div>
+                                            <div class="mission-icon"></div>
                         <h3>함께하는 연대</h3>
                         <p>소외된 이웃 없이 모두가 존중받는 사회를 만들어갑니다.</p>
                     </div>
@@ -367,9 +367,9 @@
             mobileMenuBtn.addEventListener('click', function() {
                 navLinks.classList.toggle('active');
                 if (navLinks.classList.contains('active')) {
-                    mobileMenuBtn.innerHTML = '✕';
+                                        mobileMenuBtn.innerHTML = '닫기';
                 } else {
-                    mobileMenuBtn.innerHTML = '☰';
+                                    mobileMenuBtn.innerHTML = '메뉴';
                 }
             });
 
@@ -377,7 +377,7 @@
             links.forEach(link => {
                 link.addEventListener('click', () => {
                     navLinks.classList.remove('active');
-                    mobileMenuBtn.innerHTML = '☰';
+                                    mobileMenuBtn.innerHTML = '메뉴';
                 });
             });
         });
