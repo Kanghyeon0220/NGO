@@ -4,36 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donate | Lemonade For All Foundation</title>
+    
+    <meta name="description" content="Support our mission for a better world. Donation page for Lemonade For All.">
+    <meta property="og:title" content="Donate | Lemonade For All Foundation">
+    <meta property="og:description" content="Every small act counts. Join us in building a sustainable future.">
+    
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    
     <style>
+        html { scroll-behavior: smooth; }
+        
         :root {
-            --primary-yellow: #FDFD96;
-            --accent-yellow: #FFEE8C;
-            --text-dark: #1A1A1A;
-            --text-gray: #555555;
+            --primary: #FBF7D7;
+            --secondary: #887a00;
+            --accent: #FFD200;
+            --bg-warm: #FFFEF0;
+            --text-main: #1A1A1A;
+            --text-muted: #555555;
             --white: #FFFFFF;
-            --bg-light: #FFFEF0;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 4px 20px rgba(0,0,0,0.06);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            color: var(--text-dark);
-            line-height: 1.6;
+        body { 
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            color: var(--text-main);
+            line-height: 1.7;
             background-color: var(--white);
         }
-
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
             z-index: 1000;
             border-bottom: 1px solid rgba(0,0,0,0.05);
         }
-
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -42,301 +49,227 @@
             justify-content: space-between;
             align-items: center;
         }
-
         .logo {
             font-size: 1.4rem;
             font-weight: 800;
+            color: var(--secondary);
+            text-decoration: none;
             display: flex;
             align-items: center;
-            text-decoration: none;
-            color: inherit;
         }
-
         .logo span {
-            width: 14px;
-            height: 14px;
-            background: var(--primary-yellow);
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
             border-radius: 50%;
             margin-right: 10px;
-            border: 2.5px solid var(--text-dark);
         }
-
         .lang-toggle {
-            cursor: pointer;
-            background: var(--white);
-            border: 2px solid var(--text-dark);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-weight: 800;
-            font-size: 0.85rem;
             text-decoration: none;
-            color: var(--text-dark);
+            color: var(--text-main);
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            border: 1.5px solid var(--text-main);
+            border-radius: 50px;
             transition: var(--transition);
         }
-
         .lang-toggle:hover {
-            background: var(--primary-yellow);
+            background: var(--primary);
         }
-
+        
         .main-container {
             max-width: 600px;
-            margin: 120px auto 80px;
-            padding: 0 20px;
+            margin: 140px auto 100px;
+            padding: 0 2rem;
         }
-
         .donation-header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 3rem;
         }
-
         .donation-header h1 {
             font-size: 2.5rem;
-            font-weight: 900;
-            margin-bottom: 10px;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 1rem;
         }
-
         .donation-header p {
-            color: var(--text-gray);
+            color: var(--text-muted);
             font-size: 1.1rem;
         }
-
+        
         .donation-card {
-            background: var(--white);
-            border-radius: 24px;
-            padding: 40px;
-            border: 1px solid rgba(0,0,0,0.08);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            background: var(--bg-warm);
+            padding: 3rem;
+            border-radius: 30px;
+            box-shadow: var(--shadow);
         }
-
         .section-title {
             font-size: 1.1rem;
             font-weight: 800;
-            margin-bottom: 20px;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
             display: flex;
             align-items: center;
             gap: 10px;
         }
-
         .section-title::before {
             content: '';
             width: 4px;
             height: 18px;
-            background: var(--primary-yellow);
-            display: inline-block;
+            background: var(--accent);
             border-radius: 2px;
         }
-
+        
         .amount-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 12px;
-            margin-bottom: 15px;
+            margin-bottom: 1.5rem;
         }
-
         .amount-option {
+            background: var(--white);
             border: 2px solid #eee;
-            border-radius: 12px;
-            padding: 15px;
+            border-radius: 15px;
+            padding: 1rem;
             text-align: center;
             cursor: pointer;
             font-weight: 700;
             transition: var(--transition);
         }
-
         .amount-option:hover {
-            border-color: var(--primary-yellow);
-            background: var(--bg-light);
+            border-color: var(--accent);
         }
-
         .amount-option.active {
-            border-color: var(--text-dark);
-            background: var(--primary-yellow);
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--text-main);
         }
-
-        .custom-amount-wrap {
-            margin-bottom: 30px;
-        }
-
-        .input-group {
-            position: relative;
-            margin-bottom: 20px;
-        }
-
-        .input-group label {
-            display: block;
-            font-size: 0.9rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: var(--text-gray);
-        }
-
-        input[type="text"],
-        input[type="email"],
-        input[type="number"],
-        textarea {
+        
+        input[type=\"number\"], input[type=\"text\"], input[type=\"email\"], textarea {
             width: 100%;
-            padding: 14px 18px;
+            padding: 1rem;
             border: 2px solid #eee;
-            border-radius: 12px;
-            font-size: 1rem;
+            border-radius: 15px;
             font-family: inherit;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
             transition: var(--transition);
         }
-
         input:focus, textarea:focus {
             outline: none;
-            border-color: var(--text-dark);
+            border-color: var(--secondary);
         }
-
+        
         .payment-methods {
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            margin-bottom: 30px;
+            gap: 12px;
+            margin-bottom: 2rem;
         }
-
         .payment-option {
             display: flex;
             align-items: center;
-            padding: 16px;
+            padding: 1rem;
+            background: var(--white);
             border: 2px solid #eee;
-            border-radius: 12px;
+            border-radius: 15px;
             cursor: pointer;
+            font-weight: 700;
             transition: var(--transition);
         }
-
-        .payment-option:hover {
-            background: var(--bg-light);
-        }
-
+        .payment-option input { margin-right: 15px; }
         .payment-option.active {
-            border-color: var(--text-dark);
-            background: var(--white);
+            border-color: var(--secondary);
         }
-
-        .payment-option input {
-            margin-right: 15px;
-            accent-color: var(--text-dark);
-        }
-
-        .payment-option span {
-            font-weight: 700;
-        }
-
+        
         .bank-details {
             display: none;
-            background: var(--bg-light);
-            padding: 20px;
-            border-radius: 12px;
-            margin-top: -10px;
-            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px dashed #ccc;
+            margin-bottom: 1.5rem;
             font-size: 0.95rem;
-            border: 1px dashed #d1d1d1;
         }
-
-        .bank-details p {
-            margin-bottom: 5px;
-        }
-
-        .bank-details strong {
-            color: var(--text-dark);
-        }
-
+        
         .submit-btn {
             width: 100%;
-            background: var(--text-dark);
+            background: var(--text-main);
             color: var(--white);
             border: none;
-            padding: 18px;
-            border-radius: 12px;
+            padding: 1.2rem;
+            border-radius: 50px;
             font-size: 1.1rem;
             font-weight: 800;
             cursor: pointer;
             transition: var(--transition);
         }
-
         .submit-btn:hover {
-            opacity: 0.9;
             transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
-
+        
         footer {
             text-align: center;
-            padding: 40px;
-            color: var(--text-gray);
+            padding: 4rem 2rem;
+            color: var(--text-muted);
             font-size: 0.9rem;
         }
-
+        
         @media (max-width: 480px) {
             .amount-grid { grid-template-columns: 1fr; }
-            .donation-card { padding: 25px; }
+            .donation-card { padding: 2rem; }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="nav-container">
-            <a href="index-en.html" class="logo">
-                <span></span>
-                Lemonade For All
-            </a>
-            <a href="donate.html" class="lang-toggle">KOR</a>
+            <a href="index-en.html" class="logo"><span></span>Lemonade For All</a>
+            <a href="donate.html" class="lang-toggle">KR</a>
         </div>
     </header>
 
     <div class="main-container">
         <div class="donation-header">
-            <h1>Make an Impact</h1>
-            <p>Your contribution helps us build a more sustainable and inclusive future.</p>
+            <h1>Small Acts, Big Impact</h1>
+            <p>Your warm support will be used wisely for a sustainable future.</p>
         </div>
 
         <div class="donation-card">
             <form id="donation-form">
                 <div class="section-title">Select Amount</div>
                 <div class="amount-grid">
-                    <div class="amount-option" data-value="10">$10</div>
-                    <div class="amount-option" data-value="30">$30</div>
-                    <div class="amount-option" data-value="50">$50</div>
+                    <div class="amount-option" data-value="10000">$10</div>
+                    <div class="amount-option" data-value="30000">$30</div>
+                    <div class="amount-option" data-value="50000">$50</div>
                 </div>
-                <div class="custom-amount-wrap">
-                    <input type="number" id="custom-amount" placeholder="Enter custom amount ($)" min="1">
-                </div>
+                <input type="number" id="custom-amount" placeholder="Custom Amount ($)" min="1">
 
                 <div class="section-title">Donor Information</div>
-                <div class="input-group">
-                    <label>Full Name</label>
-                    <input type="text" required placeholder="John Doe">
-                </div>
-                <div class="input-group">
-                    <label>Email Address</label>
-                    <input type="email" required placeholder="john@example.com">
-                </div>
+                <input type="text" required placeholder="Full Name (or Nickname)">
+                <input type="email" required placeholder="Email Address">
 
                 <div class="section-title">Payment Method</div>
                 <div class="payment-methods">
                     <label class="payment-option active">
                         <input type="radio" name="payment" value="card" checked>
-                        <span>Credit / Debit Card</span>
+                        Credit / Debit Card
                     </label>
                     <label class="payment-option">
                         <input type="radio" name="payment" value="bank">
-                        <span>Bank Transfer</span>
+                        Bank Transfer
                     </label>
                 </div>
 
                 <div id="bank-info" class="bank-details">
-                    <p><strong>Bank:</strong> Global Peace Bank</p>
+                    <p><strong>Bank:</strong> Peace Global Bank</p>
                     <p><strong>Account:</strong> 123-456-789012</p>
                     <p><strong>Holder:</strong> Lemonade For All Foundation</p>
-                    <p style="margin-top:10px; font-size: 0.85rem; color: var(--text-gray);">
-                        * Please include your name in the transfer memo.
-                    </p>
                 </div>
 
-                <div class="input-group">
-                    <label>Message (Optional)</label>
-                    <textarea placeholder="Your message of support..."></textarea>
-                </div>
+                <textarea placeholder="Message of Support (Optional)"></textarea>
 
                 <button type="submit" class="submit-btn">Complete Donation</button>
             </form>
@@ -344,12 +277,14 @@
     </div>
 
     <footer>
-        <p>© 2026 Lemonade For All Foundation. All rights reserved.</p>
+        © 2026 Lemonade For All Foundation. All rights reserved.
     </footer>
 
     <script>
         const amountOptions = document.querySelectorAll('.amount-option');
         const customInput = document.getElementById('custom-amount');
+        const paymentOptions = document.querySelectorAll('.payment-option');
+        const bankInfo = document.getElementById('bank-info');
 
         amountOptions.forEach(opt => {
             opt.addEventListener('click', () => {
@@ -363,20 +298,12 @@
             amountOptions.forEach(o => o.classList.remove('active'));
         });
 
-        const paymentOptions = document.querySelectorAll('.payment-option');
-        const bankInfo = document.getElementById('bank-info');
-
         paymentOptions.forEach(opt => {
             opt.addEventListener('click', () => {
                 paymentOptions.forEach(o => o.classList.remove('active'));
                 opt.classList.add('active');
-                
-                const radio = opt.querySelector('input');
-                if (radio.value === 'bank') {
-                    bankInfo.style.display = 'block';
-                } else {
-                    bankInfo.style.display = 'none';
-                }
+                const val = opt.querySelector('input').value;
+                bankInfo.style.display = (val === 'bank') ? 'block' : 'none';
             });
         });
 
