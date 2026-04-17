@@ -268,7 +268,7 @@
         <nav class="nav-container">
             <a href="#" class="logo">Lemonade For All</a>
             
-            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+                        <button class="mobile-menu-btn" id="mobileMenuBtn">Menu</button>
             
             <div class="nav-links" id="navLinks">
                 <a href="#about">About</a>
@@ -292,17 +292,17 @@
                 <h2 class="section-title">Our Mission</h2>
                 <div class="mission-grid">
                     <div class="mission-card">
-                        <div class="mission-icon">🌱</div>
+                                            <div class="mission-icon"></div>
                         <h3>Sustainability</h3>
                         <p>We act to preserve a clean environment and ecosystem for future generations.</p>
                     </div>
                     <div class="mission-card">
-                        <div class="mission-icon">📚</div>
+                                            <div class="mission-icon"></div>
                         <h3>Equal Education</h3>
                         <p>We support all children in receiving quality education and opportunities.</p>
                     </div>
                     <div class="mission-card">
-                        <div class="mission-icon">🤝</div>
+                                            <div class="mission-icon"></div>
                         <h3>Solidarity</h3>
                         <p>We strive for a society where everyone is respected without exclusion.</p>
                     </div>
@@ -363,9 +363,9 @@
             mobileMenuBtn.addEventListener('click', function() {
                 navLinks.classList.toggle('active');
                 if (navLinks.classList.contains('active')) {
-                    mobileMenuBtn.innerHTML = '✕';
+                                    mobileMenuBtn.innerHTML = 'Close';
                 } else {
-                    mobileMenuBtn.innerHTML = '☰';
+                                    mobileMenuBtn.innerHTML = 'Menu';
                 }
             });
 
@@ -373,7 +373,7 @@
             links.forEach(link => {
                 link.addEventListener('click', () => {
                     navLinks.classList.remove('active');
-                    mobileMenuBtn.innerHTML = '☰';
+                                    mobileMenuBtn.innerHTML = 'Menu';
                 });
             });
         });
