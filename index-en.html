@@ -19,7 +19,7 @@
             --secondary: #887a00;
             --accent: #FFD200;
             --bg-warm: #FFFEF0;
-            --text-main: #1A1A1A;
+                        --text-main: #3c3333;
             --text-muted: #555555;
             --white: #FFFFFF;
             --shadow: 0 4px 20px rgba(0,0,0,0.06);
@@ -89,10 +89,14 @@
             display: none;
             background: none;
             border: none;
-            font-size: 1.8rem;
+                        font-size: 0.9rem;
             cursor: pointer;
             color: var(--text-main);
         }
+
+                .btn-lang-mobile {
+                                display: none;
+                            }
 
         .hero {
             padding: 12rem 2rem 8rem;
@@ -240,6 +244,16 @@
             .mobile-menu-btn {
                 display: block;
             }
+                    .btn-lang-mobile {
+                                    display: inline-block;
+                                    font-size: 0.85rem;
+                                    font-weight: 700;
+                                    color: var(--secondary);
+                                    text-decoration: none;
+                                    padding: 0.3rem 0.7rem;
+                                    border: 1.5px solid var(--secondary);
+                                    border-radius: 20px;
+                                }
             .nav-links {
                 display: none;
                 flex-direction: column;
@@ -269,13 +283,14 @@
             <a href="#" class="logo">Lemonade For All</a>
             
                         <button class="mobile-menu-btn" id="mobileMenuBtn">Menu</button>
+                            <a href="index.html" class="btn-lang btn-lang-mobile">KR</a>
             
             <div class="nav-links" id="navLinks">
                 <a href="#about">About</a>
                 <a href="#projects">Campaigns</a>
                 <a href="#contact">Contact</a>
                 <a href="donate-en.html" class="btn-donate">Donate</a>
-                <a href="index.html" class="btn-lang">KR</a>
+                
             </div>
         </nav>
     </header>
