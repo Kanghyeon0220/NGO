@@ -19,7 +19,7 @@
             --secondary: #887a00;
             --accent: #FFD200;
             --bg-warm: #FFFEF0;
-            --text-main: #1A1A1A;
+                        --text-main: #3c3333;
             --text-muted: #555555;
             --white: #FFFFFF;
             --shadow: 0 4px 20px rgba(0,0,0,0.06);
@@ -88,11 +88,15 @@
         .mobile-menu-btn {
             display: none;
             background: none;
+                        font-size: 0.9rem;
             border: none;
-            font-size: 1.8rem;
             cursor: pointer;
             color: var(--text-main);
         }
+
+                .btn-lang-mobile {
+                                display: none;
+                            }
 
         .hero {
             padding: 12rem 2rem 8rem;
@@ -244,6 +248,16 @@
             .mobile-menu-btn {
                 display: block;
             }
+                    .btn-lang-mobile {
+                                    display: inline-block;
+                                    font-size: 0.85rem;
+                                    font-weight: 700;
+                                    color: var(--secondary);
+                                    text-decoration: none;
+                                    padding: 0.3rem 0.7rem;
+                                    border: 1.5px solid var(--secondary);
+                                    border-radius: 20px;
+                                }
             .nav-links {
                 display: none;
                 flex-direction: column;
@@ -273,13 +287,14 @@
             <a href="#" class="logo">Lemonade For All</a>
             
                         <button class="mobile-menu-btn" id="mobileMenuBtn">메뉴</button>
+                            <a href="index-en.html" class="btn-lang btn-lang-mobile">EN</a>
             
             <div class="nav-links" id="navLinks">
                 <a href="#about">재단 소개</a>
                 <a href="#projects">캠페인</a>
                 <a href="#contact">문의하기</a>
                 <a href="donate.html" class="btn-donate">후원하기</a>
-                <a href="index-en.html" class="btn-lang">EN</a>
+                
             </div>
         </nav>
     </header>
