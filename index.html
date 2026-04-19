@@ -8,18 +8,18 @@
     <style>
         html { scroll-behavior: smooth; }
         :root {
-            --primary: #FBF7D7;
-            --secondary: #F4D060;
-            --accent: #FFD200;
+            --primary: #fbfad7;     /* light yellow */
+            --secondary: #F4D060;   /* NGO original secondary */
+            --accent: #ffeb93;      /* 2nd yellow */
             --bg-warm: #FFFEF0;
-            --text-main: #3c3333;
+            --text-main: #3c3333;   /* brown */
             --text-muted: #555555;
             --white: #FFFFFF;
             --shadow: 0 4px 20px rgba(0,0,0,0.06);
             --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
+        body {
             font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
             color: var(--text-main);
             line-height: 1.7;
@@ -46,7 +46,7 @@
         .logo {
             font-size: 1.6rem;
             font-weight: 800;
-            color: var(--secondary);
+            color: var(--text-main); /* Changed to brown */
             text-decoration: none;
             letter-spacing: -0.02em;
         }
@@ -68,24 +68,26 @@
             transition: var(--transition);
         }
         .nav-links a:hover {
-            color: var(--secondary);
+            color: var(--text-main);
+            opacity: 0.7;
         }
         .btn-lang {
             font-weight: 700;
             font-size: 0.85rem;
             padding: 0.4rem 0.8rem;
-            border: 2px solid var(--secondary);
+            border: 2px solid var(--text-main); /* Changed to brown */
             border-radius: 50px;
-            color: var(--secondary);
+            color: var(--text-main); /* Changed to brown */
             text-decoration: none;
             transition: var(--transition);
         }
         .btn-lang:hover {
-            background: var(--primary);
+            background: var(--text-main);
+            color: var(--primary);
         }
         .btn-donate {
-            background-color: #F4D060;
-            color: var(--text-main) !important;
+            background-color: var(--text-main); /* Changed to brown */
+            color: var(--primary) !important; /* Changed to light yellow */
             padding: 0.8rem 1.8rem;
             border-radius: 50px;
             font-weight: 700 !important;
@@ -94,7 +96,7 @@
         }
         .btn-donate:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 15px rgba(255, 210, 0, 0.3);
+            box-shadow: 0 8px 15px rgba(60, 51, 51, 0.3);
         }
         .mobile-menu-btn {
             display: none;
@@ -117,25 +119,22 @@
             margin-bottom: 1.5rem;
             line-height: 1.2;
             letter-spacing: -0.03em;
-            color: var(--secondary);
+            color: var(--text-main); /* Changed to brown */
         }
         .hero p {
             font-size: 1.3rem;
-            color: var(--text-muted);
+            color: var(--text-main); /* Changed to brown */
             max-width: 600px;
             margin: 0 auto 3rem;
         }
         .section-padding { padding: 8rem 2rem; }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+        .container { max-width: 1200px; margin: 0 auto; }
         .section-title {
             font-size: 2.5rem;
             font-weight: 800;
             text-align: center;
             margin-bottom: 4rem;
-            color: var(--secondary);
+            color: var(--text-main); /* Changed to brown */
         }
         .mission-grid {
             display: grid;
@@ -156,7 +155,7 @@
         .mission-card h3 {
             font-size: 1.4rem;
             margin-bottom: 1rem;
-            color: var(--secondary);
+            color: var(--text-main); /* Changed to brown */
         }
         .projects-grid {
             display: grid;
@@ -179,7 +178,7 @@
             border-color: transparent;
         }
         .project-meta {
-            color: var(--secondary);
+            color: var(--text-main); /* Changed to brown */
             font-weight: 700;
             font-size: 0.9rem;
             text-transform: uppercase;
@@ -190,7 +189,7 @@
         .project-card h3 {
             font-size: 2rem;
             margin-bottom: 1rem;
-            color: var(--secondary);
+            color: var(--text-main); /* Changed to brown */
         }
         .project-card p {
             color: var(--text-muted);
@@ -207,7 +206,7 @@
         }
         .progress-fill {
             height: 100%;
-            background: var(--accent);
+            background: var(--accent); /* This is now 2nd yellow: #ffeb93 */
             border-radius: 10px;
             transition: width 1s ease-in-out;
         }
@@ -230,7 +229,7 @@
         .footer-logo {
             font-size: 2rem;
             font-weight: 800;
-            color: var(--secondary);
+            color: var(--text-main); /* Changed to brown */
             text-decoration: none;
             display: block;
             margin-bottom: 1rem;
@@ -259,12 +258,8 @@
                 gap: 1.5rem;
                 border-bottom: 1px solid #eee;
             }
-            .nav-links.active {
-                display: flex;
-            }
-            .mobile-menu-btn {
-                display: block;
-            }
+            .nav-links.active { display: flex; }
+            .mobile-menu-btn { display: block; }
             .hero h1 { font-size: 2.8rem; }
             .mission-grid, .projects-grid { grid-template-columns: 1fr; }
             .project-card { padding: 2.5rem; }
@@ -273,83 +268,98 @@
 </head>
 <body>
     <header>
-        <nav class="nav-container">
+        <div class="nav-container">
             <a href="index.html" class="logo">Lemonade For All</a>
             <div class="nav-right">
-                <div class="nav-links" id="navLinks">
+                <nav class="nav-links" id="navLinks">
                     <a href="#about">재단 소개</a>
                     <a href="#projects">캠페인</a>
                     <a href="#contact">문의하기</a>
                     <a href="donate.html" class="btn-donate">후원하기</a>
-                </div>
+                </nav>
                 <a href="index-en.html" class="btn-lang">EN</a>
                 <button class="mobile-menu-btn" id="mobileMenuBtn">Menu</button>
             </div>
-        </nav>
+        </div>
     </header>
-    <main>
-        <section class="hero">
-            <h1>작은 변화가<br>만드는 큰 물결</h1>
-            <p>우리는 누구나 세상을 바꿀 수 있다고 믿습니다.<br>여러분의 작은 참여가 모여 더 나은 내일을 만듭니다.</p>
-            <a href="donate.html" class="btn-donate" style="display: inline-block; font-size: 1.1rem; padding: 1rem 2.5rem;">함께하기</a>
-        </section>
-        <section id="about" class="section-padding">
-            <div class="container">
-                <h2 class="section-title">우리의 미션</h2>
-                <div class="mission-grid">
-                    <div class="mission-card">
-                        <h3>지속가능한 환경</h3>
-                        <p>미래 세대를 위한 깨끗한 환경과 생태계 보존을 위해 행동합니다.</p>
-                    </div>
-                    <div class="mission-card">
-                        <h3>평등한 교육</h3>
-                        <p>모든 아이들이 질 높은 교육을 받을 수 있도록 지원합니다.</p>
-                    </div>
-                    <div class="mission-card">
-                        <h3>함께하는 연대</h3>
-                        <p>소외된 이웃 없이 모두가 존중받는 사회를 만들어갑니다.</p>
-                    </div>
+
+    <section class="hero">
+        <div class="container">
+            <h1>작은 변화가 <br> 만드는 큰 물결</h1>
+            <p>우리는 누구나 세상을 바꿀 수 있다고 믿습니다. <br> 여러분의 작은 참여가 모여 더 나은 내일을 만듭니다.</p>
+            <a href="donate.html" class="btn-donate">함께하기</a>
+        </div>
+    </section>
+
+    <section class="section-padding" id="about">
+        <div class="container">
+            <h2 class="section-title">우리의 미션</h2>
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <h3>지속가능한 환경</h3>
+                    <p>미래 세대를 위한 깨끗한 환경과 생태계 보존을 위해 행동합니다.</p>
+                </div>
+                <div class="mission-card">
+                    <h3>평등한 교육</h3>
+                    <p>모든 아이들이 질 높은 교육을 받을 수 있도록 지원합니다.</p>
+                </div>
+                <div class="mission-card">
+                    <h3>함께하는 연대</h3>
+                    <p>소외된 이웃 없이 모두가 존중받는 사회를 만들어갑니다.</p>
                 </div>
             </div>
-        </section>
-        <section id="projects" class="section-padding" style="background-color: var(--bg-warm);">
-            <div class="container">
-                <h2 class="section-title">진행중인 캠페인</h2>
-                <div class="projects-grid">
-                    <a href="project1.html" class="project-card">
-                        <span class="project-meta">Project 01</span>
-                        <h3>도심 속 그린 캠페인</h3>
-                        <p>버려진 공터를 지역 주민들의 휴식처이자 다양한 생물들의 보금자리로 탈바꿈시킵니다.</p>
-                        <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
-                        <div class="progress-text"><span>75% 달성</span><span>목표 500만원</span></div>
-                    </a>
-                    <a href="project2.html" class="project-card">
-                        <span class="project-meta">Project 02</span>
-                        <h3>꿈꾸는 노랑 교실</h3>
-                        <p>교육 사각지대에 놓인 아이들에게 양질의 멘토링과 IT 교육의 기회를 제공합니다.</p>
-                        <div class="progress-bar"><div class="progress-fill" style="width: 40%;"></div></div>
-                        
-                        <div class="progress-text"><span>40% 달성</span><span>목표 1,000만원</span></div>
-                    </a>
-                </div>
+        </div>
+    </section>
+
+    <section class="section-padding" id="projects">
+        <div class="container">
+            <h2 class="section-title">진행중인 캠페인</h2>
+            <div class="projects-grid">
+                <a href="project1.html" class="project-card">
+                    <span class="project-meta">Project 01</span>
+                    <h3>도심 속 그린 캠페인</h3>
+                    <p>버려진 공터를 지역 주민들의 휴식처이자 다양한 생물들의 보금자리로 탈바꿈시킵니다.</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 75%;"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span>75% 달성</span>
+                        <span>목표 500만원</span>
+                    </div>
+                </a>
+                <a href="project2.html" class="project-card">
+                    <span class="project-meta">Project 02</span>
+                    <h3>꿈꾸는 노랑 교실</h3>
+                    <p>교육 사각지대에 놓인 아이들에게 양질의 멘토링과 IT 교육의 기회를 제공합니다.</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 40%;"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span>40% 달성</span>
+                        <span>목표 1,000만원</span>
+                    </div>
+                </a>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+
     <footer id="contact">
         <div class="footer-content">
             <a href="index.html" class="footer-logo">Lemonade For All</a>
             <p>더 나은 내일을 위해 함께 걸어주세요.</p>
             <div class="contact-info">
                 <a href="mailto:lfageneralx@gmail.com">lfageneralx@gmail.com</a>
-                <a href="https://www.instagram.com/lemonade_forall" target="_blank">Instagram</a>
+                <a href="https://www.instagram.com/lemonade_forall">Instagram</a>
             </div>
-            <p style="opacity: 0.5; font-size: 0.9rem; margin-top: 2rem;">© 2026 Lemonade For All Foundation. 모든 권리 보유.</p>
+            <p style="margin-top: 3rem; font-size: 0.9rem; color: #999;">© 2026 Lemonade For All Foundation. 모든 권리 보유.</p>
         </div>
     </footer>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuBtn = document.getElementById('mobileMenuBtn');
             const navLinks = document.getElementById('navLinks');
+            
             mobileMenuBtn.addEventListener('click', function() {
                 navLinks.classList.toggle('active');
                 this.innerHTML = navLinks.classList.contains('active') ? 'Close' : 'Menu';
