@@ -19,13 +19,13 @@
             --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
+        body {
             font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
             color: var(--text-main);
-            line-height: 1.8;
-            background-color: var(--bg-warm);
+            line-height: 1.7;
+            background-color: var(--white);
+            word-break: keep-all;
         }
-        a { text-decoration: none; color: inherit; }
         header {
             position: fixed;
             top: 0;
@@ -38,29 +38,40 @@
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 1rem 2rem;
+            padding: 1.2rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         .logo {
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: var(--secondary);
             display: flex;
             align-items: center;
+            text-decoration: none;
         }
-        .logo span {
-            width: 12px;
-            height: 12px;
-            background: var(--accent);
-            border-radius: 50%;
-            margin-right: 10px;
+        .logo-img {
+            height: 40px;
+            width: auto;
         }
         .nav-right {
             display: flex;
             align-items: center;
             gap: 1.5rem;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: var(--transition);
+        }
+        .nav-links a:hover {
+            color: var(--text-main);
+            opacity: 0.7;
         }
         .btn-lang {
             font-weight: 700;
@@ -68,73 +79,163 @@
             padding: 0.4rem 0.8rem;
             border: 2px solid var(--text-main);
             border-radius: 50px;
+            color: var(--text-main);
+            text-decoration: none;
             transition: var(--transition);
         }
-        .btn-lang:hover { background: var(--primary); }
-        .back-btn { font-weight: 600; color: var(--text-muted); }
-        .back-btn:hover { color: var(--text-main); }
+        .btn-lang:hover {
+            background: var(--text-main);
+            color: var(--primary);
+        }
+        .btn-donate {
+            background-color: var(--text-main);
+            color: var(--primary) !important;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 700 !important;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .btn-donate:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(60, 51, 51, 0.3);
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            font-size: 0.75rem;
+            border: none;
+            cursor: pointer;
+            color: var(--text-main);
+            font-weight: 700;
+        }
+        .nav-links.active { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: white; padding: 2rem; gap: 1.5rem; border-bottom: 1px solid #eee; }
 
         .project-hero {
             padding: 12rem 2rem 6rem;
             background: var(--primary);
             text-align: center;
-            border-bottom-left-radius: 50px;
-            border-bottom-right-radius: 50px;
+            border-radius: 0 0 50px 50px;
         }
         .hero-label {
-            background: var(--white);
-            padding: 0.5rem 1.2rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 800;
-            color: var(--secondary);
-            margin-bottom: 1.5rem;
             display: inline-block;
+            padding: 0.5rem 1.2rem;
+            background: var(--white);
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
         }
         .project-hero h1 {
             font-size: 3.5rem;
-            font-weight: 900;
-            color: var(--secondary);
+            font-weight: 800;
             margin-bottom: 1rem;
-            letter-spacing: -1px;
+            color: var(--text-main);
         }
+        .project-hero p {
+            font-size: 1.2rem;
+            color: var(--text-main);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
         .content-wrap {
             max-width: 800px;
             margin: -4rem auto 100px;
             background: var(--white);
-            padding: 4rem;
+            padding: 5rem;
             border-radius: 30px;
             box-shadow: var(--shadow);
         }
-        h2 {
+        article h2 {
             font-size: 1.8rem;
-            margin: 2.5rem 0 1.2rem;
-            color: var(--secondary);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            margin-top: 3rem;
+            color: var(--text-main);
             display: inline-block;
             border-bottom: 4px solid var(--accent);
         }
-        p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 1.5rem; }
-        ul { list-style: none; margin-bottom: 2.5rem; }
-        li { position: relative; padding-left: 2rem; margin-bottom: 1rem; font-size: 1.1rem; }
-        li::before { content: ''; position: absolute; left: 0; }
+        article h2:first-child { margin-top: 0; }
+        article p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        article ul {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        article li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+        article li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
         .action-area {
             text-align: center;
             margin-top: 5rem;
             padding-top: 3rem;
-            border-top: 1px solid #eee;
+            border-top: 1px solid rgba(0,0,0,0.05);
         }
         .btn {
             display: inline-block;
             background: var(--text-main);
             color: var(--primary);
-            padding: 1rem 3rem;
+            padding: 1.2rem 3rem;
             border-radius: 50px;
             font-weight: 800;
             font-size: 1.1rem;
             transition: var(--transition);
         }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            background: var(--bg-warm);
+            padding: 6rem 2rem 3rem;
+            text-align: center;
+        }
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .footer-logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+            text-decoration: none;
+        }
+        .footer-logo .logo-img {
+            height: 50px;
+            width: auto;
+        }
+        .contact-info {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+        .contact-info a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
         @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
             .project-hero h1 { font-size: 2.5rem; }
             .content-wrap { padding: 2.5rem; margin-top: -2rem; }
         }
@@ -143,13 +244,22 @@
 <body>
     <header>
         <div class="nav-container">
-            <a href="index-en.html" class="logo"><span></span>Lemonade For All</a>
+            <a href="index-en.html" class="logo">
+                <img src="image.jpg" alt="Lemonade For All" class="logo-img">
+            </a>
             <div class="nav-right">
+                <nav class="nav-links" id="navLinks">
+                    <a href="index-en.html#about">About</a>
+                    <a href="index-en.html#projects">Campaigns</a>
+                    <a href="index-en.html#contact">Contact</a>
+                    <a href="donate-en.html" class="btn-donate">Donate</a>
+                </nav>
                 <a href="project2.html" class="btn-lang">KR</a>
-                <a href="index-en.html" class="back-btn">← Home</a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">Menu</button>
             </div>
         </div>
     </header>
+
     <main>
         <div class="project-hero">
             <span class="hero-label">Education</span>
@@ -175,8 +285,31 @@
             </article>
         </div>
     </main>
-    <footer style="text-align: center; padding: 4rem 2rem; color: var(--text-muted); font-size: 0.9rem;">
-        © 2026 Lemonade For All Foundation. All rights reserved.
+
+    <footer id="contact">
+        <div class="footer-content">
+            <a href="index-en.html" class="footer-logo">
+                <img src="image.jpg" alt="Lemonade For All" class="logo-img">
+            </a>
+            <p>When life gives you lemons, make lemonade.</p>
+            <div class="contact-info">
+                <a href="mailto:lfageneralx@gmail.com">lfageneralx@gmail.com</a>
+                <a href="https://www.instagram.com/lemonade_forall">Instagram</a>
+            </div>
+            <p style="margin-top: 3rem; font-size: 0.9rem; color: #999;">© 2026 Lemonade For All Foundation. All rights reserved.</p>
+        </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navLinks = document.getElementById('navLinks');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                this.innerHTML = navLinks.classList.contains('active') ? 'Close' : 'Menu';
+            });
+        });
+    </script>
 </body>
 </html>
