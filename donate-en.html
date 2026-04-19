@@ -1,318 +1,312 @@
-                    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donate | Lemonade For All Foundation</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate | Lemonade For All Foundation</title>
+  <meta name="description" content="Support our mission for a better world. Donation page for Lemonade For All.">
+  <meta property="og:title" content="Donate | Lemonade For All Foundation">
+  <meta property="og:description" content="Every small act counts. Join us in building a sustainable future.">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <style>
+    html { scroll-behavior: smooth; }
+    :root {
+      --primary: #fbfad7;
+      --secondary: #F4D060;
+      --accent: #ffeb93;
+      --bg-warm: #FFFEF0;
+      --text-main: #3c3333;
+      --text-muted: #555555;
+      --white: #FFFFFF;
+      --shadow: 0 4px 20px rgba(0,0,0,0.06);
+      --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      color: var(--text-main);
+      line-height: 1.7;
+      background-color: var(--white);
+      word-break: keep-all;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(20px);
+      z-index: 1000;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--text-main);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+    .btn-lang {
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 0.4rem 0.8rem;
+      border: 2px solid var(--text-main);
+      border-radius: 50px;
+      color: var(--text-main);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .btn-lang:hover {
+      background: var(--text-main);
+      color: var(--primary);
+    }
     
-    <meta name="description" content="Support our mission for a better world. Donation page for Lemonade For All.">
-    <meta property="og:title" content="Donate | Lemonade For All Foundation">
-    <meta property="og:description" content="Every small act counts. Join us in building a sustainable future.">
+    .main-container {
+      max-width: 600px;
+      margin: 140px auto 100px;
+      padding: 0 2rem;
+    }
+    .donation-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .donation-header h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .donation-header p {
+      color: var(--text-muted);
+      font-size: 1.15rem;
+    }
     
-    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    .donation-card {
+      background: var(--bg-warm);
+      padding: 3rem;
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+    }
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-title::before {
+      content: '';
+      width: 4px;
+      height: 18px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
     
-    <style>
-        html { scroll-behavior: smooth; }
-        
-        :root {
-            --primary: #FBF7D7;
-            --secondary: #F4D060;
-            --accent: #FFD200;
-            --bg-warm: #FFFEF0;
-            --text-main: #3c3333;
-            --text-muted: #555555;
-            --white: #FFFFFF;
-            --shadow: 0 4px 20px rgba(0,0,0,0.06);
-            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
-            color: var(--text-main);
-            line-height: 1.7;
-            background-color: var(--white);
-        }
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: var(--secondary);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-        .logo span {
-            width: 12px;
-            height: 12px;
-            background: var(--accent);
-            border-radius: 50%;
-            margin-right: 10px;
-        }
-        .lang-toggle {
-            text-decoration: none;
-            color: var(--text-main);
-            font-weight: 700;
-            font-size: 0.9rem;
-            padding: 0.5rem 1rem;
-            border: 1.5px solid var(--text-main);
-            border-radius: 50px;
-            transition: var(--transition);
-        }
-        .lang-toggle:hover {
-            background: var(--primary);
-        }
-        
-        .main-container {
-            max-width: 600px;
-            margin: 140px auto 100px;
-            padding: 0 2rem;
-        }
-        .donation-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        .donation-header h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--secondary);
-            margin-bottom: 1rem;
-        }
-        .donation-header p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-        }
-        
-        .donation-card {
-            background: var(--bg-warm);
-            padding: 3rem;
-            border-radius: 30px;
-            box-shadow: var(--shadow);
-        }
-        .section-title {
-            font-size: 1.1rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            color: var(--secondary);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .section-title::before {
-            content: '';
-            width: 4px;
-            height: 18px;
-            background: var(--accent);
-            border-radius: 2px;
-        }
-        
-        .amount-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            margin-bottom: 1.5rem;
-        }
-        .amount-option {
-            background: var(--white);
-            border: 2px solid #eee;
-            border-radius: 15px;
-            padding: 1rem;
-            text-align: center;
-            cursor: pointer;
-            font-weight: 700;
-            transition: var(--transition);
-        }
-        .amount-option:hover {
-            border-color: var(--accent);
-        }
-        .amount-option.active {
-            background: var(--accent);
-            border-color: var(--accent);
-            color: var(--text-main);
-        }
-        
-        input[type=\"number\"], input[type=\"text\"], input[type=\"email\"], textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #eee;
-            border-radius: 15px;
-            font-family: inherit;
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
-            transition: var(--transition);
-        }
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: var(--secondary);
-        }
-        
-        .payment-methods {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-bottom: 2rem;
-        }
-        .payment-option {
-            display: flex;
-            align-items: center;
-            padding: 1rem;
-            background: var(--white);
-            border: 2px solid #eee;
-            border-radius: 15px;
-            cursor: pointer;
-            font-weight: 700;
-            transition: var(--transition);
-        }
-        .payment-option input { margin-right: 15px; }
-        .payment-option.active {
-            border-color: var(--secondary);
-        }
-        
-        .bank-details {
-            display: none;
-            background: rgba(255, 255, 255, 0.5);
-            padding: 1.5rem;
-            border-radius: 15px;
-            border: 1px dashed #ccc;
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-        }
-        
-        .submit-btn {
-            width: 100%;
-            background: var(--text-main);
-            color: var(--white);
-            border: none;
-            padding: 1.2rem;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 800;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        }
-        
-        footer {
-            text-align: center;
-            padding: 4rem 2rem;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-        
-        @media (max-width: 480px) {
-            .amount-grid { grid-template-columns: 1fr; }
-            .donation-card { padding: 2rem; }
-        }
-    </style>
+    .amount-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 1.5rem;
+    }
+    .amount-option {
+      background: var(--white);
+      border: 2px solid #eee;
+      border-radius: 15px;
+      padding: 1rem;
+      text-align: center;
+      cursor: pointer;
+      font-weight: 700;
+      transition: var(--transition);
+    }
+    .amount-option:hover {
+      border-color: var(--accent);
+    }
+    .amount-option.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--text-main);
+    }
+    
+    input[type="number"], input[type="text"], input[type="email"], textarea {
+      width: 100%;
+      padding: 1rem;
+      border: 2px solid #eee;
+      border-radius: 15px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      transition: var(--transition);
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--secondary);
+    }
+    
+    .payment-methods {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 2rem;
+    }
+    .payment-option {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      background: var(--white);
+      border: 2px solid #eee;
+      border-radius: 15px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: var(--transition);
+    }
+    .payment-option input { margin-right: 15px; }
+    .payment-option.active {
+      border-color: var(--secondary);
+    }
+    
+    .bank-details {
+      display: none;
+      background: rgba(255, 255, 255, 0.5);
+      padding: 1.5rem;
+      border-radius: 15px;
+      border: 1px dashed #ccc;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+    
+    .submit-btn {
+      width: 100%;
+      background: var(--text-main);
+      color: var(--white);
+      border: none;
+      padding: 1.2rem;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    
+    footer {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    
+    @media (max-width: 480px) {
+      .amount-grid { grid-template-columns: 1fr; }
+      .donation-card { padding: 2rem; }
+      .donation-header h1 { font-size: 2.2rem; }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="nav-container">
-            <a href="index-en.html" class="logo"><span></span>Lemonade For All</a>
-            <a href="donate.html" class="lang-toggle">KR</a>
-        </div>
-    </header>
+  <header>
+    <div class="nav-container">
+      <a href="index-en.html" class="logo">Lemonade For All</a>
+      <a href="donate.html" class="btn-lang">KR</a>
+    </div>
+  </header>
 
-    <div class="main-container">
-        <div class="donation-header">
-            <h1>Small Acts, Big Impact</h1>
-            <p>Your warm support will be used wisely for a sustainable future.</p>
-        </div>
-
-        <div class="donation-card">
-            <form id="donation-form">
-                <div class="section-title">Select Amount</div>
-                <div class="amount-grid">
-                    <div class="amount-option" data-value="10000">$10</div>
-                    <div class="amount-option" data-value="30000">$30</div>
-                    <div class="amount-option" data-value="50000">$50</div>
-                </div>
-                <input type="number" id="custom-amount" placeholder="Custom Amount ($)" min="1">
-
-                <div class="section-title">Donor Information</div>
-                <input type="text" required placeholder="Full Name (or Nickname)">
-                <input type="email" required placeholder="Email Address">
-
-                <div class="section-title">Payment Method</div>
-                <div class="payment-methods">
-                    <label class="payment-option active">
-                        <input type="radio" name="payment" value="card" checked>
-                        Credit / Debit Card
-                    </label>
-                    <label class="payment-option">
-                        <input type="radio" name="payment" value="bank">
-                        Bank Transfer
-                    </label>
-                </div>
-
-                <div id="bank-info" class="bank-details">
-                    <p><strong>Bank:</strong> Peace Global Bank</p>
-                    <p><strong>Account:</strong> 123-456-789012</p>
-                    <p><strong>Holder:</strong> Lemonade For All Foundation</p>
-                </div>
-
-                <textarea placeholder="Message of Support (Optional)"></textarea>
-
-                <button type="submit" class="submit-btn">Complete Donation</button>
-            </form>
-        </div>
+  <div class="main-container">
+    <div class="donation-header">
+      <h1>Make an Impact</h1>
+      <p>Your kindness helps us build a sustainable future together.</p>
     </div>
 
-    <footer>
-        © 2026 Lemonade For All Foundation. All rights reserved.
-    </footer>
+    <div class="donation-card">
+      <form id="donation-form">
+        <div class="section-title">Select Amount</div>
+        <div class="amount-grid">
+          <div class="amount-option" data-value="10000">$10</div>
+          <div class="amount-option" data-value="30000">$30</div>
+          <div class="amount-option" data-value="50000">$50</div>
+        </div>
+        <input type="number" id="custom-amount" placeholder="Other amount (USD)" min="1">
 
-    <script>
-        const amountOptions = document.querySelectorAll('.amount-option');
-        const customInput = document.getElementById('custom-amount');
-        const paymentOptions = document.querySelectorAll('.payment-option');
-        const bankInfo = document.getElementById('bank-info');
+        <div class="section-title">Donor Information</div>
+        <input type="text" required placeholder="Full Name">
+        <input type="email" required placeholder="Email Address">
 
-        amountOptions.forEach(opt => {
-            opt.addEventListener('click', () => {
-                amountOptions.forEach(o => o.classList.remove('active'));
-                opt.classList.add('active');
-                customInput.value = '';
-            });
+        <div class="section-title">Payment Method</div>
+        <div class="payment-methods">
+          <label class="payment-option active">
+            <input type="radio" name="payment" value="card" checked>
+            Credit / Debit Card
+          </label>
+          <label class="payment-option">
+            <input type="radio" name="payment" value="bank">
+            Bank Transfer
+          </label>
+        </div>
+
+        <div id="bank-info" class="bank-details">
+          <p><strong>Bank:</strong> Peace Global Bank</p>
+          <p><strong>Account:</strong> 123-456-789012</p>
+          <p><strong>Holder:</strong> Lemonade For All Foundation</p>
+        </div>
+
+        <textarea placeholder="Message of Support (Optional)"></textarea>
+
+        <button type="submit" class="submit-btn">Complete Donation</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 Lemonade For All Foundation. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const amountOptions = document.querySelectorAll('.amount-option');
+      const customInput = document.getElementById('custom-amount');
+      const paymentOptions = document.querySelectorAll('.payment-option');
+      const bankInfo = document.getElementById('bank-info');
+      const donationForm = document.getElementById('donation-form');
+
+      amountOptions.forEach(opt => {
+        opt.addEventListener('click', () => {
+          amountOptions.forEach(o => o.classList.remove('active'));
+          opt.classList.add('active');
+          customInput.value = '';
         });
+      });
 
-        customInput.addEventListener('input', () => {
-            amountOptions.forEach(o => o.classList.remove('active'));
-        });
+      customInput.addEventListener('input', () => {
+        amountOptions.forEach(o => o.classList.remove('active'));
+      });
 
-        paymentOptions.forEach(opt => {
-            opt.addEventListener('click', () => {
-                paymentOptions.forEach(o => o.classList.remove('active'));
-                opt.classList.add('active');
-                const val = opt.querySelector('input').value;
-                bankInfo.style.display = (val === 'bank') ? 'block' : 'none';
-            });
+      paymentOptions.forEach(opt => {
+        opt.addEventListener('click', () => {
+          paymentOptions.forEach(o => o.classList.remove('active'));
+          opt.classList.add('active');
+          const val = opt.querySelector('input').value;
+          bankInfo.style.display = (val === 'bank') ? 'block' : 'none';
         });
+      });
 
-        document.getElementById('donation-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thank you for your generous support!');
-            window.location.href = 'index-en.html';
-        });
-    </script>
+      donationForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Thank you for your generous support!');
+        window.location.href = 'index-en.html';
+      });
+    });
+  </script>
 </body>
 </html>
-
