@@ -9,17 +9,17 @@
         html { scroll-behavior: smooth; }
         :root {
             --primary: #FBF7D7;
-            --secondary: #887a00;
+            --secondary: #F4D060;
             --accent: #FFD200;
             --bg-warm: #FFFEF0;
-            --text-main: #3c3333;
-            --text-muted: #555555;
+            --text-main: #1a1a1a;
+            --text-muted: #333333;
             --white: #FFFFFF;
             --shadow: 0 4px 20px rgba(0,0,0,0.06);
             --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
+        body {
             font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
             color: var(--text-main);
             line-height: 1.8;
@@ -71,9 +71,11 @@
             transition: var(--transition);
         }
         .btn-lang:hover { background: var(--primary); }
-        .back-btn { font-weight: 600; color: var(--text-muted); }
+        .back-btn {
+            font-weight: 600;
+            color: var(--text-muted);
+        }
         .back-btn:hover { color: var(--text-main); }
-
         .project-hero {
             padding: 12rem 2rem 6rem;
             background: var(--primary);
@@ -113,10 +115,19 @@
             display: inline-block;
             border-bottom: 4px solid var(--accent);
         }
-        p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 1.5rem; }
+        p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
         ul { list-style: none; margin-bottom: 2.5rem; }
-        li { position: relative; padding-left: 2rem; margin-bottom: 1rem; font-size: 1.1rem; }
-        li::before { content: '🍋'; position: absolute; left: 0; }
+        li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        li::before { content: ''; position: absolute; left: 0; }
         .action-area {
             text-align: center;
             margin-top: 5rem;
@@ -145,38 +156,39 @@
         <div class="nav-container">
             <a href="index-en.html" class="logo"><span></span>Lemonade For All</a>
             <div class="nav-right">
-                <a href="project1.html" class="btn-lang">🌐 KR</a>
-                <a href="index-en.html" class="back-btn">← Home</a>
+                <a href="project1.html" class="btn-lang">KOR</a>
+                <a href="index-en.html" class="back-btn">&larr; Home</a>
             </div>
         </div>
     </header>
-    <main>
-        <div class="project-hero">
-            <span class="hero-label">Environment</span>
-            <h1>Urban Green Campaign</h1>
-            <p>Cleaning our streets with our own hands.</p>
+
+    <section class="project-hero">
+        <div class="hero-label">Environment</div>
+        <h1>Urban Green Campaign</h1>
+        <p>Cleaning our streets with our own hands.</p>
+    </section>
+
+    <div class="content-wrap">
+        <h2>About the Project</h2>
+        <p>Every weekend, high school students gather for plogging (picking up trash while jogging) in urban areas. We don't just pick up trash; we record waste data to create an 'Environmental Vulnerability Map' for our neighborhood.</p>
+
+        <h2>Key Activities</h2>
+        <ul>
+            <li>Plogging every Saturday at 10 AM</li>
+            <li>Waste data classification and digital mapping</li>
+            <li>Waste separation campaigns for residents</li>
+            <li>Annual environmental reports and policy proposals</li>
+        </ul>
+
+        <div class="action-area">
+            <h3 style="font-size:1.5rem; margin-bottom:1rem; color:var(--text-main);">Support Our Activities!</h3>
+            <p>Small donations create a bigger lemonade effect.</p>
+            <a href="donate-en.html" class="btn">Support This Project</a>
         </div>
-        <div class="content-wrap">
-            <article>
-                <h2>About the Project</h2>
-                <p>Every weekend, high school students gather for plogging (picking up trash while jogging) in urban areas. We don't just pick up trash; we record waste data to create an 'Environmental Vulnerability Map' for our neighborhood.</p>
-                <h2>Key Activities</h2>
-                <ul>
-                    <li>Plogging every Saturday at 10 AM</li>
-                    <li>Waste data classification and digital mapping</li>
-                    <li>Waste separation campaigns for residents</li>
-                    <li>Annual environmental maps and policy proposals</li>
-                </ul>
-                <div class="action-area">
-                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Support Our Activities!</h3>
-                    <p>Small donations create a bigger lemonade effect.</p>
-                    <a href="donate-en.html" class="btn">🍋 Support This Project</a>
-                </div>
-            </article>
-        </div>
-    </main>
+    </div>
+
     <footer style="text-align: center; padding: 4rem 2rem; color: var(--text-muted); font-size: 0.9rem;">
-        © 2026 Lemonade For All Foundation. All rights reserved.
+        &copy; 2026 Lemonade For All Foundation. All rights reserved.
     </footer>
 </body>
 </html>
