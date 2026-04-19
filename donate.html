@@ -1,299 +1,317 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>후원하기 | Lemonade For All Foundation</title>
-  <meta name="description" content="세상을 바꾸는 작은 실천, 레모네이드 포 올 후원 페이지입니다.">
-  <meta property="og:title" content="후원하기 | Lemonade For All Foundation">
-  <meta property="og:description" content="지속 가능한 미래를 위한 따뜻한 동행, 지금 바로 함께해주세요.">
-  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-  <style>
-    html { scroll-behavior: smooth; }
-    :root {
-      --primary: #FBF7D7;
-      --secondary: #F4D060;
-      --accent: #FFD200;
-      --bg-warm: #FFFEF0;
-      --text-main: #3c3333;
-      --text-muted: #555555;
-      --white: #FFFFFF;
-      --shadow: 0 4px 20px rgba(0,0,0,0.06);
-      --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
-      color: var(--text-main);
-      line-height: 1.7;
-      background-color: var(--white);
-    }
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(20px);
-      z-index: 1000;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-    }
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1.2rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-    }
-    .logo-img {
-      height: 40px;
-      width: auto;
-    }
-    .lang-toggle {
-      text-decoration: none;
-      color: var(--text-main);
-      font-weight: 700;
-      font-size: 0.9rem;
-      padding: 0.5rem 1rem;
-      border: 1.5px solid var(--text-main);
-      border-radius: 50px;
-      transition: var(--transition);
-    }
-    .lang-toggle:hover {
-      background: var(--primary);
-    }
-
-    .main-container {
-      max-width: 600px;
-      margin: 140px auto 100px;
-      padding: 0 2rem;
-    }
-    .donation-header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-    .donation-header h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: var(--secondary);
-      margin-bottom: 1rem;
-    }
-    .donation-header p {
-      color: var(--text-muted);
-      font-size: 1.1rem;
-    }
-
-    .donation-card {
-      background: var(--bg-warm);
-      padding: 3rem;
-      border-radius: 30px;
-      box-shadow: var(--shadow);
-    }
-    .section-title {
-      font-size: 1.1rem;
-      font-weight: 800;
-      margin-bottom: 1.5rem;
-      color: var(--secondary);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .section-title::before {
-      content: '';
-      width: 4px;
-      height: 18px;
-      background: var(--accent);
-      border-radius: 2px;
-    }
-
-    .amount-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-bottom: 1.5rem;
-    }
-    .amount-option {
-      background: var(--white);
-      border: 2px solid #eee;
-      border-radius: 15px;
-      padding: 1rem;
-      text-align: center;
-      cursor: pointer;
-      font-weight: 700;
-      transition: var(--transition);
-    }
-    .amount-option:hover {
-      border-color: var(--accent);
-    }
-    .amount-option.active {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: var(--text-main);
-    }
-
-    input[type="number"], input[type="text"], input[type="email"], textarea {
-      width: 100%;
-      padding: 1rem;
-      border: 2px solid #eee;
-      border-radius: 15px;
-      font-family: inherit;
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
-      transition: var(--transition);
-    }
-    input:focus, textarea:focus {
-      outline: none;
-      border-color: var(--secondary);
-    }
-
-    .payment-methods {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 2rem;
-    }
-    .payment-option {
-      display: flex;
-      align-items: center;
-      padding: 1rem;
-      background: var(--white);
-      border: 2px solid #eee;
-      border-radius: 15px;
-      cursor: pointer;
-      font-weight: 700;
-      transition: var(--transition);
-    }
-    .payment-option input { margin-right: 15px; }
-    .payment-option.active {
-      border-color: var(--secondary);
-    }
-
-    .bank-details {
-      display: none;
-      background: rgba(255, 255, 255, 0.5);
-      padding: 1.5rem;
-      border-radius: 15px;
-      border: 1px dashed #ccc;
-      margin-bottom: 1.5rem;
-      font-size: 0.95rem;
-    }
-
-    .submit-btn {
-      width: 100%;
-      background: var(--text-main);
-      color: var(--white);
-      border: none;
-      padding: 1.2rem;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      font-weight: 800;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-    .submit-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-
-    footer {
-      text-align: center;
-      padding: 4rem 2rem;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 480px) {
-      .amount-grid { grid-template-columns: 1fr; }
-      .donation-card { padding: 2rem; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>후원하기 | Lemonade For All Foundation</title>
+    
+    <meta name="description" content="세상을 바꾸는 작은 실천, 레모네이드 포 올 후원 페이지입니다.">
+    <meta property="og:title" content="후원하기 | Lemonade For All Foundation">
+    <meta property="og:description" content="지속 가능한 미래를 위한 따뜻한 동행, 지금 바로 함께해주세요.">
+    
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        
+        :root {
+            --primary: #FBF7D7;
+            --secondary: #887a00;
+            --accent: #FFD200;
+            --bg-warm: #FFFEF0;
+            --text-main: #3c3333;
+            --text-muted: #555555;
+            --white: #FFFFFF;
+            --shadow: 0 4px 20px rgba(0,0,0,0.06);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            color: var(--text-main);
+            line-height: 1.7;
+            background-color: var(--white);
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--secondary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .logo span {
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .lang-toggle {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            border: 1.5px solid var(--text-main);
+            border-radius: 50px;
+            transition: var(--transition);
+        }
+        .lang-toggle:hover {
+            background: var(--primary);
+        }
+        
+        .main-container {
+            max-width: 600px;
+            margin: 140px auto 100px;
+            padding: 0 2rem;
+        }
+        .donation-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .donation-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        .donation-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        
+        .donation-card {
+            background: var(--bg-warm);
+            padding: 3rem;
+            border-radius: 30px;
+            box-shadow: var(--shadow);
+        }
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 18px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .amount-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 1.5rem;
+        }
+        .amount-option {
+            background: var(--white);
+            border: 2px solid #eee;
+            border-radius: 15px;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+        .amount-option:hover {
+            border-color: var(--accent);
+        }
+        .amount-option.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--text-main);
+        }
+        
+        input[type=\"number\"], input[type=\"text\"], input[type=\"email\"], textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #eee;
+            border-radius: 15px;
+            font-family: inherit;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+        
+        .payment-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 2rem;
+        }
+        .payment-option {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            background: var(--white);
+            border: 2px solid #eee;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+        .payment-option input { margin-right: 15px; }
+        .payment-option.active {
+            border-color: var(--secondary);
+        }
+        
+        .bank-details {
+            display: none;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px dashed #ccc;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            background: var(--text-main);
+            color: var(--white);
+            border: none;
+            padding: 1.2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 480px) {
+            .amount-grid { grid-template-columns: 1fr; }
+            .donation-card { padding: 2rem; }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="nav-container">
-      <a href="index.html" class="logo">
-        <img src="image.jpg" alt="Lemonade For All" class="logo-img">
-      </a>
-      <a href="donate-en.html" class="lang-toggle">ENG</a>
-    </div>
-  </header>
-  <div class="main-container">
-    <div class="donation-header">
-      <h1>세상을 바꾸는 작은 실천</h1>
-      <p>보내주시는 따뜻한 마음은 지속 가능한 미래를 위해 소중히 사용됩니다.</p>
-    </div>
-    <div class="donation-card">
-      <form id="donation-form">
-        <div class="section-title">후원 금액 선택</div>
-        <div class="amount-grid">
-          <div class="amount-option" data-value="10000">1만원</div>
-          <div class="amount-option" data-value="30000">3만원</div>
-          <div class="amount-option" data-value="50000">5만원</div>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo"><span></span>Lemonade For All</a>
+            <a href="donate-en.html" class="lang-toggle">ENG</a>
         </div>
-        <input type="number" id="custom-amount" placeholder="직접 입력 (원)" min="1000">
-        <div class="section-title">후원자 정보</div>
-        <input type="text" required placeholder="성명 (또는 닉네임)">
-        <input type="email" required placeholder="이메일 주소">
-        <div class="section-title">결제 수단</div>
-        <div class="payment-methods">
-          <label class="payment-option active">
-            <input type="radio" name="payment" value="card" checked>
-            카드 결제
-          </label>
-          <label class="payment-option">
-            <input type="radio" name="payment" value="bank">
-            무통장 입금
-          </label>
+    </header>
+
+    <div class="main-container">
+        <div class="donation-header">
+            <h1>세상을 바꾸는 작은 실천</h1>
+            <p>보내주시는 따뜻한 마음은 지속 가능한 미래를 위해 소중히 사용됩니다.</p>
         </div>
-        <div id="bank-info" class="bank-details">
-          <p><strong>은행:</strong> 평화글로벌은행</p>
-          <p><strong>계좌:</strong> 123-456-789012</p>
-          <p><strong>예금주:</strong> 레모네이드 포 올 재단</p>
+
+        <div class="donation-card">
+            <form id="donation-form">
+                <div class="section-title">후원 금액 선택</div>
+                <div class="amount-grid">
+                    <div class="amount-option" data-value="10000">1만원</div>
+                    <div class="amount-option" data-value="30000">3만원</div>
+                    <div class="amount-option" data-value="50000">5만원</div>
+                </div>
+                <input type="number" id="custom-amount" placeholder="직접 입력 (원)" min="1000">
+
+                <div class="section-title">후원자 정보</div>
+                <input type="text" required placeholder="성명 (또는 닉네임)">
+                <input type="email" required placeholder="이메일 주소">
+
+                <div class="section-title">결제 수단</div>
+                <div class="payment-methods">
+                    <label class="payment-option active">
+                        <input type="radio" name="payment" value="card" checked>
+                        카드 결제
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="bank">
+                        무통장 입금
+                    </label>
+                </div>
+
+                <div id="bank-info" class="bank-details">
+                    <p><strong>은행:</strong> 평화글로벌은행</p>
+                    <p><strong>계좌:</strong> 123-456-789012</p>
+                    <p><strong>예금주:</strong> 레모네이드 포 올 재단</p>
+                </div>
+
+                <textarea placeholder="응원 메시지 (선택)"></textarea>
+
+                <button type="submit" class="submit-btn">후원 완료하기</button>
+            </form>
         </div>
-        <textarea placeholder="응원 메시지 (선택)"></textarea>
-        <button type="submit" class="submit-btn">후원 완료하기</button>
-      </form>
     </div>
-  </div>
-  <footer>
-    <a href="index.html" class="footer-logo">
-      <img src="image.jpg" alt="Lemonade For All" class="logo-img" style="height: 50px;">
-    </a>
-    <p>© 2026 Lemonade For All Foundation. 모든 권리 보유.</p>
-  </footer>
-  <script>
-    const amountOptions = document.querySelectorAll('.amount-option');
-    const customInput = document.getElementById('custom-amount');
-    const paymentOptions = document.querySelectorAll('.payment-option');
-    const bankInfo = document.getElementById('bank-info');
-    amountOptions.forEach(opt => {
-      opt.addEventListener('click', () => {
-        amountOptions.forEach(o => o.classList.remove('active'));
-        opt.classList.add('active');
-        customInput.value = '';
-      });
-    });
-    customInput.addEventListener('input', () => {
-      amountOptions.forEach(o => o.classList.remove('active'));
-    });
-    paymentOptions.forEach(opt => {
-      opt.addEventListener('click', () => {
-        paymentOptions.forEach(o => o.classList.remove('active'));
-        opt.classList.add('active');
-        const val = opt.querySelector('input').value;
-        bankInfo.style.display = (val === 'bank') ? 'block' : 'none';
-      });
-    });
-    document.getElementById('donation-form').addEventListener('submit', (e) => {
-      e.preventDefault();
-      alert('소중한 후원에 진심으로 감사드립니다!');
-      window.location.href = 'index.html';
-    });
-  </script>
+
+    <footer>
+        © 2026 Lemonade For All Foundation. 모든 권리 보유.
+    </footer>
+
+    <script>
+        const amountOptions = document.querySelectorAll('.amount-option');
+        const customInput = document.getElementById('custom-amount');
+        const paymentOptions = document.querySelectorAll('.payment-option');
+        const bankInfo = document.getElementById('bank-info');
+
+        amountOptions.forEach(opt => {
+            opt.addEventListener('click', () => {
+                amountOptions.forEach(o => o.classList.remove('active'));
+                opt.classList.add('active');
+                customInput.value = '';
+            });
+        });
+
+        customInput.addEventListener('input', () => {
+            amountOptions.forEach(o => o.classList.remove('active'));
+        });
+
+        paymentOptions.forEach(opt => {
+            opt.addEventListener('click', () => {
+                paymentOptions.forEach(o => o.classList.remove('active'));
+                opt.classList.add('active');
+                const val = opt.querySelector('input').value;
+                bankInfo.style.display = (val === 'bank') ? 'block' : 'none';
+            });
+        });
+
+        document.getElementById('donation-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('소중한 후원에 진심으로 감사드립니다!');
+            window.location.href = 'index.html';
+        });
+    </script>
 </body>
 </html>
