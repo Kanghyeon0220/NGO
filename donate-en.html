@@ -47,11 +47,13 @@
       align-items: center;
     }
     .logo {
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: var(--text-main);
+      display: flex;
+      align-items: center;
       text-decoration: none;
-      letter-spacing: -0.02em;
+    }
+    .logo-img {
+      height: 40px;
+      width: auto;
     }
     .btn-lang {
       font-weight: 700;
@@ -67,7 +69,7 @@
       background: var(--text-main);
       color: var(--primary);
     }
-    
+
     .main-container {
       max-width: 600px;
       margin: 140px auto 100px;
@@ -88,7 +90,7 @@
       color: var(--text-muted);
       font-size: 1.15rem;
     }
-    
+
     .donation-card {
       background: var(--bg-warm);
       padding: 3rem;
@@ -111,7 +113,7 @@
       background: var(--accent);
       border-radius: 2px;
     }
-    
+
     .amount-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -136,7 +138,7 @@
       border-color: var(--accent);
       color: var(--text-main);
     }
-    
+
     input[type="number"], input[type="text"], input[type="email"], textarea {
       width: 100%;
       padding: 1rem;
@@ -151,7 +153,7 @@
       outline: none;
       border-color: var(--secondary);
     }
-    
+
     .payment-methods {
       display: flex;
       flex-direction: column;
@@ -173,7 +175,7 @@
     .payment-option.active {
       border-color: var(--secondary);
     }
-    
+
     .bank-details {
       display: none;
       background: rgba(255, 255, 255, 0.5);
@@ -183,7 +185,7 @@
       margin-bottom: 1.5rem;
       font-size: 0.95rem;
     }
-    
+
     .submit-btn {
       width: 100%;
       background: var(--text-main);
@@ -200,14 +202,14 @@
       transform: translateY(-2px);
       box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
-    
+
     footer {
       text-align: center;
       padding: 4rem 2rem;
       color: var(--text-muted);
       font-size: 0.9rem;
     }
-    
+
     @media (max-width: 480px) {
       .amount-grid { grid-template-columns: 1fr; }
       .donation-card { padding: 2rem; }
@@ -218,17 +220,17 @@
 <body>
   <header>
     <div class="nav-container">
-      <a href="index-en.html" class="logo">Lemonade For All</a>
+      <a href="index-en.html" class="logo">
+        <img src="image.jpg" alt="Lemonade For All" class="logo-img">
+      </a>
       <a href="donate.html" class="btn-lang">KR</a>
     </div>
   </header>
-
   <div class="main-container">
     <div class="donation-header">
       <h1>Make an Impact</h1>
       <p>Your kindness helps us build a sustainable future together.</p>
     </div>
-
     <div class="donation-card">
       <form id="donation-form">
         <div class="section-title">Select Amount</div>
@@ -238,11 +240,9 @@
           <div class="amount-option" data-value="50000">$50</div>
         </div>
         <input type="number" id="custom-amount" placeholder="Other amount (USD)" min="1">
-
         <div class="section-title">Donor Information</div>
         <input type="text" required placeholder="Full Name">
         <input type="email" required placeholder="Email Address">
-
         <div class="section-title">Payment Method</div>
         <div class="payment-methods">
           <label class="payment-option active">
@@ -254,24 +254,22 @@
             Bank Transfer
           </label>
         </div>
-
         <div id="bank-info" class="bank-details">
           <p><strong>Bank:</strong> Peace Global Bank</p>
           <p><strong>Account:</strong> 123-456-789012</p>
           <p><strong>Holder:</strong> Lemonade For All Foundation</p>
         </div>
-
         <textarea placeholder="Message of Support (Optional)"></textarea>
-
         <button type="submit" class="submit-btn">Complete Donation</button>
       </form>
     </div>
   </div>
-
   <footer>
+    <a href="index-en.html" class="footer-logo">
+      <img src="image.jpg" alt="Lemonade For All" class="logo-img" style="height: 50px;">
+    </a>
     <p>© 2026 Lemonade For All Foundation. All rights reserved.</p>
   </footer>
-
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const amountOptions = document.querySelectorAll('.amount-option');
