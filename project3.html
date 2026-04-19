@@ -1,220 +1,197 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>플라스틱 프리 챌린지 | Lemonade For All Foundation</title>
- 
- <meta name="description" content="일상의 사소한 습관을 바꾸는 제로 웨이스트 운동. 플라스틱 프리 챌린지 상세 내용.">
- <meta property="og:title" content="플라스틱 프리 챌린지 | Lemonade For All Foundation">
- <meta property="og:description" content="기업과 사회의 변화를 이끌어내는 청소년들의 목소리.">
- 
- <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
- 
- <style>
- html { scroll-behavior: smooth; }
- :root {
- --primary: #FBF7D7;
- --secondary: #F4D060;
- --accent: #FFD200;
- --bg-warm: #FFFEF0;
- --text-main: #3c3333;
- --text-muted: #555555;
- --white: #FFFFFF;
- --shadow: 0 4px 20px rgba(0,0,0,0.06);
- --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
- }
- * { margin: 0; padding: 0; box-sizing: border-box; }
- body {
- font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
- color: var(--text-main);
- line-height: 1.8;
- background-color: var(--bg-warm);
- }
- a { text-decoration: none; color: inherit; }
- ul { list-style: none; }
- /* Navigation */
- .nav {
- position: fixed;
- top: 0;
- width: 100%;
- padding: 1rem 5%;
- background: rgba(255, 255, 255, 0.95);
- backdrop-filter: blur(10px);
- display: flex;
- justify-content: space-between;
- align-items: center;
- z-index: 1000;
- box-shadow: 0 2px 10px rgba(0,0,0,0.03);
- }
- .logo { display: flex; align-items: center; text-decoration: none; }
- .logo-img { height: 40px; width: auto; }
- .nav-links { display: flex; gap: 2rem; align-items: center; }
- .nav-links a { font-size: 0.95rem; font-weight: 500; transition: var(--transition); }
- .nav-links a:hover { color: var(--secondary); }
- .lang-toggle {
- padding: 0.4rem 0.8rem;
- border: 1.5px solid var(--secondary);
- border-radius: 20px;
- font-size: 0.85rem;
- color: var(--secondary);
- font-weight: 600;
- }
- /* Hero Section */
- .project-hero {
- padding: 160px 5% 80px;
- background: linear-gradient(135deg, #FFF9C4 0%, #FFECB3 100%);
- text-align: center;
- }
- .hero-label {
- display: inline-block;
- padding: 0.5rem 1.2rem;
- background: var(--white);
- border-radius: 30px;
- font-size: 0.9rem;
- font-weight: 600;
- margin-bottom: 1.5rem;
- color: var(--secondary);
- box-shadow: var(--shadow);
- }
- .project-hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 1.5rem; }
- .project-hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 0 auto; }
- /* Content Area */
- .content-wrap { padding: 80px 5%; max-width: 900px; margin: 0 auto; }
- article h2 { font-size: 1.8rem; margin: 3rem 0 1.5rem; position: relative; padding-left: 1rem; }
- article h2::before {
- content: '';
- position: absolute;
- left: 0;
- top: 50%;
- transform: translateY(-50%);
- width: 4px;
- height: 24px;
- background: var(--secondary);
- border-radius: 2px;
- }
- article p { margin-bottom: 1.5rem; color: var(--text-muted); font-size: 1.1rem; }
- article ul li {
- margin-bottom: 1rem;
- padding-left: 1.5rem;
- position: relative;
- }
- article ul li::before {
- content: '•';
- position: absolute;
- left: 0;
- color: var(--secondary);
- font-weight: bold;
- }
- .action-area {
- margin-top: 5rem;
- padding: 4rem;
- background: var(--white);
- border-radius: 24px;
- text-align: center;
- box-shadow: var(--shadow);
- }
- .btn {
- display: inline-block;
- padding: 1.2rem 3rem;
- background: var(--secondary);
- color: var(--text-main);
- border-radius: 50px;
- font-weight: 700;
- font-size: 1.1rem;
- transition: var(--transition);
- margin-top: 1rem;
- }
- .btn:hover { background: var(--accent); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(244, 208, 96, 0.3); }
- /* Footer */
- footer { background: #f8f8f8; padding: 60px 5%; margin-top: 100px; border-top: 1px solid #eee; }
- .footer-content { max-width: 1200px; margin: 0 auto; text-align: center; }
- .footer-logo { display: block; margin-bottom: 1.5rem; }
- .contact-info { margin: 2rem 0; display: flex; justify-content: center; gap: 2rem; }
- .contact-info a { color: var(--text-muted); font-size: 0.95rem; }
- /* Mobile Menu */
- .mobile-menu-btn { display: none; font-size: 1.5rem; cursor: pointer; }
- @media (max-width: 768px) {
- .nav-links {
- display: none;
- position: absolute;
- top: 100%;
- left: 0;
- width: 100%;
- background: white;
- padding: 2rem;
- flex-direction: column;
- text-align: center;
- box-shadow: 0 10px 20px rgba(0,0,0,0.05);
- }
- .nav-links.active { display: flex; }
- .mobile-menu-btn { display: block; }
- .action-area { padding: 2rem; }
- }
- </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>플라스틱 프리 챌린지 | Lemonade For All Foundation</title>
+    
+    <meta name="description" content="일상의 사소한 습관을 바꾸는 제로 웨이스트 운동. 플라스틱 프리 챌린지 상세 내용.">
+    <meta property="og:title" content="플라스틱 프리 챌린지 | Lemonade For All Foundation">
+    <meta property="og:description" content="기업과 사회의 변화를 이끌어내는 청소년들의 목소리.">
+    
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        
+        :root {
+            --primary: #FBF7D7;
+            --secondary: #887a00;
+            --accent: #FFD200;
+            --bg-warm: #FFFEF0;
+            --text-main: #3c3333;
+            --text-muted: #555555;
+            --white: #FFFFFF;
+            --shadow: 0 4px 20px rgba(0,0,0,0.06);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            color: var(--text-main);
+            line-height: 1.8;
+            background-color: var(--bg-warm);
+        }
+        a { text-decoration: none; color: inherit; }
+        
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+        }
+        .logo span {
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .nav-right {
+            display: flex;
+            align-items: center; gap: 1.5rem;
+        }
+        .lang-toggle {
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 0.4rem 0.8rem;
+            border: 2px solid var(--text-main);
+            border-radius: 50px;
+            transition: var(--transition);
+        }
+        .lang-toggle:hover { background: var(--primary); }
+        .back-btn { font-weight: 600; color: var(--text-muted); }
+        .back-btn:hover { color: var(--text-main); }
+        
+        .project-hero {
+            padding: 12rem 2rem 6rem;
+            background: var(--primary);
+            text-align: center;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+        .hero-label {
+            background: var(--white);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+        .project-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+        
+        .content-wrap {
+            max-width: 800px;
+            margin: -4rem auto 100px;
+            background: var(--white);
+            padding: 4rem;
+            border-radius: 30px;
+            box-shadow: var(--shadow);
+        }
+        h2 {
+            font-size: 1.8rem;
+            margin: 2.5rem 0 1.2rem;
+            color: var(--secondary);
+            display: inline-block;
+            border-bottom: 4px solid var(--accent);
+        }
+        p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 1.5rem; }
+        ul { list-style: none; margin-bottom: 2.5rem; }
+        li { position: relative; padding-left: 2rem; margin-bottom: 1rem; font-size: 1.1rem; }
+        li::before { content: '🍋'; position: absolute; left: 0; }
+        
+        .action-area {
+            text-align: center;
+            margin-top: 5rem;
+            padding-top: 3rem;
+            border-top: 1px solid #eee;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--text-main);
+            color: var(--primary);
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        
+        @media (max-width: 768px) {
+            .project-hero h1 { font-size: 2.5rem; }
+            .content-wrap { padding: 2.5rem; margin-top: -2rem; }
+        }
+    </style>
 </head>
 <body>
- <nav class="nav">
- <a href="index.html" class="logo">
- <img src="image.jpg" alt="Lemonade For All" class="logo-img">
- </a>
- <div class="mobile-menu-btn" id="mobileMenuBtn">Menu</div>
- <div class="nav-links" id="navLinks">
- <a href="index.html#projects">프로젝트</a>
- <a href="donate.html">후원하기</a>
- <a href="index.html#contact">문의하기</a>
- <a href="project3-en.html" class="lang-toggle">EN</a>
- </div>
- </nav>
- <main>
- <div class="project-hero">
- <span class="hero-label">환경 및 제로 웨이스트</span>
- <h1>플라스틱 프리 챌린지</h1>
- <p>일상의 사소한 습관을 바꾸는 제로 웨이스트 운동으로 깨끗한 지구를 만듭니다.</p>
- </div>
- <div class="content-wrap">
- <article>
- <h2>프로젝트 소개</h2>
- <p>플라스틱 프리 챌린지는 일상생활에서 발생하는 일회용 플라스틱 사용을 줄이고, 지속 가능한 소비 문화를 확산시키기 위한 청소년 주도의 환경 보호 캠페인입니다. 우리는 작은 행동이 모여 큰 변화를 만든다는 믿음으로 활동합니다.</p>
- <br>
- <h2>주요 활동</h2>
- <ul>
- <li>지역 사회 카페 내 텀블러 사용 캠페인 진행</li>
- <li>제로 웨이스트 팝업 스토어 및 워크숍 개최</li>
- <li>기업 대상 플라스틱 대체재 도입 제안 및 협력</li>
- <li>SNS 릴레이 챌린지를 통한 대중 인식 개선 활동</li>
- </ul>
- <div class="action-area">
- <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">지구의 미래를 지켜주세요!</h3>
- <p>여러분의 작은 후원이 깨끗한 환경을 위한 큰 변화의 시작이 됩니다.</p>
- <a href="donate.html" class="btn">프로젝트 후원하기</a>
- </div>
- </article>
- </div>
- </main>
- <footer id="contact">
- <div class="footer-content">
- <a href="index.html" class="footer-logo">
- <img src="image.jpg" alt="Lemonade For All" class="logo-img">
- </a>
- <p>When life gives you lemons, make lemonade.</p>
- <div class="contact-info">
- <a href="mailto:lfageneralx@gmail.com">lfageneralx@gmail.com</a>
- <a href="https://www.instagram.com/lemonade_forall">Instagram</a>
- </div>
- <p style="margin-top: 3rem; font-size: 0.9rem; color: #999;">© 2026 Lemonade For All Foundation. All rights reserved.</p>
- </div>
- </footer>
- <script>
- document.addEventListener('DOMContentLoaded', function() {
- const mobileMenuBtn = document.getElementById('mobileMenuBtn');
- const navLinks = document.getElementById('navLinks');
- 
- mobileMenuBtn.addEventListener('click', function() {
- navLinks.classList.toggle('active');
- this.innerHTML = navLinks.classList.contains('active') ? 'Close' : 'Menu';
- });
- });
- </script>
+    <header>
+        <div class="nav-container">
+                        <a href="index.html" class="logo">Lemonade For All</a>
+            <div class="nav-right">
+                            <a href="project3-en.html" class="lang-toggle">ENG</a>
+                            <a href="index.html" class="back-btn">메인</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="project-hero">
+            <span class="hero-label">캠페인</span>
+            <h1>플라스틱 프리 챌린지</h1>
+            <p>일상의 사소한 습관을 바꾸는 제로 웨이스트 운동입니다.</p>
+        </div>
+
+        <div class="content-wrap">
+            <article>
+                <h2>프로젝트 소개</h2>
+                <p>우리는 매일 엄청난 양의 일회용 플라스틱을 소비합니다. 플라스틱 프리 챌린지는 청소년들이 주도하여 학교와 지역 사회에서 플라스틱 사용을 줄이고, 나아가 기업들에게 친환경적인 포장재 사용을 촉구하는 목소리를 내는 활동입니다.</p>
+
+                <h2>주요 활동</h2>
+                <ul>
+                    <li>교내 텀블러 사용 캠페인 및 '일회용 컵 없는 날' 운영</li>
+                    <li>지역 카페 대상 친환경 빨대 및 다회용기 도입 제안</li>
+                    <li>플라스틱 쓰레기를 활용한 '업사이클링 굿즈' 제작</li>
+                    <li>플라스틱 오염 실태 보고서 작성 및 온/오프라인 전시</li>
+                </ul>
+
+                <div class="action-area">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">지구의 미래를 함께 지켜주세요!</h3>
+                    <p>여러분의 후원이 플라스틱 없는 세상을 앞당깁니다.</p>
+                                  <a href="donate.html" class="btn">프로젝트 후원하기</a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 4rem 2rem; color: var(--text-muted); font-size: 0.9rem;">
+        © 2026 Lemonade For All Foundation. 모든 권리 보유.
+    </footer>
 </body>
 </html>
