@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lemonade For All Foundation | NGO for a Better World</title>
-    
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-    
     <style>
         html { scroll-behavior: smooth; }
         :root {
-            --primary: #FBF7D7;
+            --primary: #fbfad7;
             --secondary: #F4D060;
-            --accent: #FFD200;
+            --accent: #ffeb93;
             --bg-warm: #FFFEF0;
             --text-main: #3c3333;
             --text-muted: #555555;
@@ -21,7 +19,7 @@
             --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
+        body {
             font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
             color: var(--text-main);
             line-height: 1.7;
@@ -48,7 +46,7 @@
         .logo {
             font-size: 1.6rem;
             font-weight: 800;
-            color: var(--secondary);
+            color: var(--text-main);
             text-decoration: none;
             letter-spacing: -0.02em;
         }
@@ -70,24 +68,26 @@
             transition: var(--transition);
         }
         .nav-links a:hover {
-            color: var(--secondary);
+            color: var(--text-main);
+            opacity: 0.7;
         }
         .btn-lang {
             font-weight: 700;
             font-size: 0.85rem;
             padding: 0.4rem 0.8rem;
-            border: 2px solid var(--secondary);
+            border: 2px solid var(--text-main);
             border-radius: 50px;
-            color: var(--secondary);
+            color: var(--text-main);
             text-decoration: none;
             transition: var(--transition);
         }
         .btn-lang:hover {
-            background: var(--primary);
+            background: var(--text-main);
+            color: var(--primary);
         }
         .btn-donate {
-            background-color: #F4D060;
-            color: var(--text-main) !important;
+            background-color: var(--text-main);
+            color: var(--primary) !important;
             padding: 0.8rem 1.8rem;
             border-radius: 50px;
             font-weight: 700 !important;
@@ -96,7 +96,7 @@
         }
         .btn-donate:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 15px rgba(255, 210, 0, 0.3);
+            box-shadow: 0 8px 15px rgba(60, 51, 51, 0.3);
         }
         .mobile-menu-btn {
             display: none;
@@ -119,25 +119,22 @@
             margin-bottom: 1.5rem;
             line-height: 1.2;
             letter-spacing: -0.03em;
-            color: var(--secondary);
+            color: var(--text-main);
         }
         .hero p {
             font-size: 1.3rem;
-            color: var(--text-muted);
+            color: var(--text-main);
             max-width: 600px;
             margin: 0 auto 3rem;
         }
         .section-padding { padding: 8rem 2rem; }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+        .container { max-width: 1200px; margin: 0 auto; }
         .section-title {
             font-size: 2.5rem;
             font-weight: 800;
             text-align: center;
             margin-bottom: 4rem;
-            color: var(--secondary);
+            color: var(--text-main);
         }
         .mission-grid {
             display: grid;
@@ -158,7 +155,7 @@
         .mission-card h3 {
             font-size: 1.4rem;
             margin-bottom: 1rem;
-            color: var(--secondary);
+            color: var(--text-main);
         }
         .projects-grid {
             display: grid;
@@ -181,7 +178,7 @@
             border-color: transparent;
         }
         .project-meta {
-            color: var(--secondary);
+            color: var(--text-main);
             font-weight: 700;
             font-size: 0.9rem;
             text-transform: uppercase;
@@ -192,7 +189,7 @@
         .project-card h3 {
             font-size: 2rem;
             margin-bottom: 1rem;
-            color: var(--secondary);
+            color: var(--text-main);
         }
         .project-card p {
             color: var(--text-muted);
@@ -232,7 +229,7 @@
         .footer-logo {
             font-size: 2rem;
             font-weight: 800;
-            color: var(--secondary);
+            color: var(--text-main);
             text-decoration: none;
             display: block;
             margin-bottom: 1rem;
@@ -261,12 +258,8 @@
                 gap: 1.5rem;
                 border-bottom: 1px solid #eee;
             }
-            .nav-links.active {
-                display: flex;
-            }
-            .mobile-menu-btn {
-                display: block;
-            }
+            .nav-links.active { display: flex; }
+            .mobile-menu-btn { display: block; }
             .hero h1 { font-size: 2.8rem; }
             .mission-grid, .projects-grid { grid-template-columns: 1fr; }
             .project-card { padding: 2.5rem; }
@@ -275,81 +268,90 @@
 </head>
 <body>
     <header>
-        <nav class="nav-container">
+        <div class="nav-container">
             <a href="index-en.html" class="logo">Lemonade For All</a>
             <div class="nav-right">
-                <div class="nav-links" id="navLinks">
+                <nav class="nav-links" id="navLinks">
                     <a href="#about">About</a>
                     <a href="#projects">Campaigns</a>
                     <a href="#contact">Contact</a>
                     <a href="donate-en.html" class="btn-donate">Donate</a>
-                </div>
+                </nav>
                 <a href="index.html" class="btn-lang">KR</a>
                 <button class="mobile-menu-btn" id="mobileMenuBtn">Menu</button>
             </div>
-        </nav>
+        </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <h1>Small Acts<br>Big Impact</h1>
-            <p>We believe anyone can change the world.<br>Your small contribution creates a better tomorrow.</p>
-            <a href="donate-en.html" class="btn-donate" style="display: inline-block; font-size: 1.1rem; padding: 1rem 2.5rem;">Join Us</a>
-        </section>
+    <section class="hero">
+        <div class="container">
+            <h1>Small Acts, <br> Big Impact</h1>
+            <p>We believe anyone can change the world. <br> Your small participation builds a better tomorrow.</p>
+            <a href="donate-en.html" class="btn-donate">Join Us</a>
+        </div>
+    </section>
 
-        <section id="about" class="section-padding">
-            <div class="container">
-                <h2 class="section-title">Our Mission</h2>
-                <div class="mission-grid">
-                    <div class="mission-card">
-                        <h3>Sustainability</h3>
-                        <p>We act to preserve a clean environment and ecosystem for future generations.</p>
-                    </div>
-                    <div class="mission-card">
-                        <h3>Equal Education</h3>
-                        <p>We support all children in receiving quality education and opportunities.</p>
-                    </div>
-                    <div class="mission-card">
-                        <h3>Solidarity</h3>
-                        <p>We strive for a society where everyone is respected without exclusion.</p>
-                    </div>
+    <section class="section-padding" id="about">
+        <div class="container">
+            <h2 class="section-title">Our Mission</h2>
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <h3>Sustainable Environment</h3>
+                    <p>We act for a clean environment and ecosystem preservation for future generations.</p>
+                </div>
+                <div class="mission-card">
+                    <h3>Equal Education</h3>
+                    <p>We support all children in receiving high-quality education.</p>
+                </div>
+                <div class="mission-card">
+                    <h3>Together in Solidarity</h3>
+                    <p>We build a society where everyone is respected without exclusion.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="projects" class="section-padding" style="background-color: var(--bg-warm);">
-            <div class="container">
-                <h2 class="section-title">Active Campaigns</h2>
-                <div class="projects-grid">
-                    <a href="project1-en.html" class="project-card">
-                        <span class="project-meta">Project 01</span>
-                        <h3>Urban Green Campaign</h3>
-                        <p>Transforming abandoned lots into rest areas for residents and habitats for biodiversity.</p>
-                        <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
-                        <div class="progress-text"><span>75% Funded</span><span>Goal $5,000</span></div>
-                    </a>
-                    <a href="project2-en.html" class="project-card">
-                        <span class="project-meta">Project 02</span>
-                        <h3>Dreaming Yellow Class</h3>
-                        <p>Providing quality mentoring and IT education opportunities to underprivileged children.</p>
-                        <div class="progress-bar"><div class="progress-fill" style="width: 40%;"></div></div>
-                        <div class="progress-text"><span>40% Funded</span><span>Goal $10,000</span></div>
-                    </a>
-                </div>
+    <section class="section-padding" id="projects">
+        <div class="container">
+            <h2 class="section-title">Ongoing Campaigns</h2>
+            <div class="projects-grid">
+                <a href="project1-en.html" class="project-card">
+                    <span class="project-meta">Project 01</span>
+                    <h3>Urban Green Campaign</h3>
+                    <p>Transforming abandoned lots into community rests and homes for diverse species.</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 75%;"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span>75% Achieved</span>
+                        <span>Goal $5,000</span>
+                    </div>
+                </a>
+                <a href="project2-en.html" class="project-card">
+                    <span class="project-meta">Project 02</span>
+                    <h3>Dreaming Yellow Class</h3>
+                    <p>Providing quality mentoring and IT education opportunities for underprivileged children.</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 40%;"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span>40% Achieved</span>
+                        <span>Goal $10,000</span>
+                    </div>
+                </a>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <footer id="contact">
-        
         <div class="footer-content">
             <a href="index-en.html" class="footer-logo">Lemonade For All</a>
-            <p>Join us on our journey for a better tomorrow.</p>
+            <p>When life gives you lemons, make lemonade.</p>
             <div class="contact-info">
                 <a href="mailto:lfageneralx@gmail.com">lfageneralx@gmail.com</a>
-                <a href="https://www.instagram.com/lemonade_forall" target="_blank">Instagram</a>
+                <a href="https://www.instagram.com/lemonade_forall">Instagram</a>
             </div>
-            <p style="opacity: 0.5; font-size: 0.9rem; margin-top: 2rem;">© 2026 Lemonade For All Foundation. All rights reserved.</p>
+            <p style="margin-top: 3rem; font-size: 0.9rem; color: #999;">© 2026 Lemonade For All Foundation. All rights reserved.</p>
         </div>
     </footer>
 
@@ -357,6 +359,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuBtn = document.getElementById('mobileMenuBtn');
             const navLinks = document.getElementById('navLinks');
+            
             mobileMenuBtn.addEventListener('click', function() {
                 navLinks.classList.toggle('active');
                 this.innerHTML = navLinks.classList.contains('active') ? 'Close' : 'Menu';
