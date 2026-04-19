@@ -44,11 +44,13 @@
             align-items: center;
         }
         .logo {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: var(--text-main);
+            display: flex;
+            align-items: center;
             text-decoration: none;
-            letter-spacing: -0.02em;
+        }
+        .logo-img {
+            height: 40px;
+            width: auto;
         }
         .nav-right {
             display: flex;
@@ -227,12 +229,14 @@
             margin: 0 auto;
         }
         .footer-logo {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--text-main);
-            text-decoration: none;
-            display: block;
+            display: flex;
+            justify-content: center;
             margin-bottom: 1rem;
+            text-decoration: none;
+        }
+        .footer-logo .logo-img {
+            height: 50px;
+            width: auto;
         }
         .contact-info {
             margin-top: 2rem;
@@ -269,7 +273,9 @@
 <body>
     <header>
         <div class="nav-container">
-            <a href="index-en.html" class="logo">Lemonade For All</a>
+            <a href="index-en.html" class="logo">
+                <img src="image.jpg" alt="Lemonade For All" class="logo-img">
+            </a>
             <div class="nav-right">
                 <nav class="nav-links" id="navLinks">
                     <a href="#about">About</a>
@@ -282,7 +288,6 @@
             </div>
         </div>
     </header>
-
     <section class="hero">
         <div class="container">
             <h1>Small Acts, <br> Big Impact</h1>
@@ -290,7 +295,6 @@
             <a href="donate-en.html" class="btn-donate">Join Us</a>
         </div>
     </section>
-
     <section class="section-padding" id="about">
         <div class="container">
             <h2 class="section-title">Our Mission</h2>
@@ -310,7 +314,6 @@
             </div>
         </div>
     </section>
-
     <section class="section-padding" id="projects">
         <div class="container">
             <h2 class="section-title">Ongoing Campaigns</h2>
@@ -342,10 +345,11 @@
             </div>
         </div>
     </section>
-
     <footer id="contact">
         <div class="footer-content">
-            <a href="index-en.html" class="footer-logo">Lemonade For All</a>
+            <a href="index-en.html" class="footer-logo">
+                <img src="image.jpg" alt="Lemonade For All" class="logo-img">
+            </a>
             <p>When life gives you lemons, make lemonade.</p>
             <div class="contact-info">
                 <a href="mailto:lfageneralx@gmail.com">lfageneralx@gmail.com</a>
@@ -354,7 +358,6 @@
             <p style="margin-top: 3rem; font-size: 0.9rem; color: #999;">© 2026 Lemonade For All Foundation. All rights reserved.</p>
         </div>
     </footer>
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuBtn = document.getElementById('mobileMenuBtn');
