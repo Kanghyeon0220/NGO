@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dreaming Yellow Class | Lemonade For All Foundation</title>
-    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
     <style>
         html { scroll-behavior: smooth; }
         :root {
@@ -12,14 +12,14 @@
             --secondary: #F4D060;
             --accent: #FFD200;
             --bg-warm: #FFFEF0;
-            --text-main: #3c3333;
-            --text-muted: #555555;
+            --text-main: #1a1a1a;
+            --text-muted: #333333;
             --white: #FFFFFF;
             --shadow: 0 4px 20px rgba(0,0,0,0.06);
             --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
+        body {
             font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
             color: var(--text-main);
             line-height: 1.8;
@@ -27,44 +27,27 @@
         }
         a { text-decoration: none; color: inherit; }
         header {
-            position: fixed;
-            top: 0;
-            width: 100%;
+            position: fixed; top: 0; width: 100%;
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(20px);
             z-index: 1000;
             border-bottom: 1px solid rgba(0,0,0,0.05);
         }
         .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            max-width: 1200px; margin: 0 auto; padding: 1rem 2rem;
+            display: flex; justify-content: space-between; align-items: center;
         }
         .logo {
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: var(--secondary);
-            display: flex;
-            align-items: center;
+            font-size: 1.4rem; font-weight: 800; color: var(--secondary);
+            display: flex; align-items: center;
         }
         .logo span {
-            width: 12px;
-            height: 12px;
-            background: var(--accent);
-            border-radius: 50%;
-            margin-right: 10px;
+            width: 12px; height: 12px; background: var(--accent);
+            border-radius: 50%; margin-right: 10px;
         }
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
+        .nav-right { display: flex; align-items: center; gap: 1.5rem; }
         .btn-lang {
-            font-weight: 700;
-            font-size: 0.85rem;
+            font-weight: 700; font-size: 0.85rem;
             padding: 0.4rem 0.8rem;
             border: 2px solid var(--text-main);
             border-radius: 50px;
@@ -73,7 +56,6 @@
         .btn-lang:hover { background: var(--primary); }
         .back-btn { font-weight: 600; color: var(--text-muted); }
         .back-btn:hover { color: var(--text-main); }
-
         .project-hero {
             padding: 12rem 2rem 6rem;
             background: var(--primary);
@@ -85,15 +67,13 @@
             background: var(--white);
             padding: 0.5rem 1.2rem;
             border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 800;
+            font-size: 0.9rem; font-weight: 800;
             color: var(--secondary);
             margin-bottom: 1.5rem;
             display: inline-block;
         }
         .project-hero h1 {
-            font-size: 3.5rem;
-            font-weight: 900;
+            font-size: 3.5rem; font-weight: 900;
             color: var(--secondary);
             margin-bottom: 1rem;
             letter-spacing: -1px;
@@ -107,16 +87,24 @@
             box-shadow: var(--shadow);
         }
         h2 {
-            font-size: 1.8rem;
-            margin: 2.5rem 0 1.2rem;
+            font-size: 1.8rem; margin: 2.5rem 0 1.2rem;
             color: var(--secondary);
             display: inline-block;
             border-bottom: 4px solid var(--accent);
         }
         p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 1.5rem; }
         ul { list-style: none; margin-bottom: 2.5rem; }
-        li { position: relative; padding-left: 2rem; margin-bottom: 1rem; font-size: 1.1rem; }
-        li::before { content: ''; position: absolute; left: 0; }
+        li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+        }
         .action-area {
             text-align: center;
             margin-top: 5rem;
@@ -129,8 +117,7 @@
             color: var(--primary);
             padding: 1rem 3rem;
             border-radius: 50px;
-            font-weight: 800;
-            font-size: 1.1rem;
+            font-weight: 800; font-size: 1.1rem;
             transition: var(--transition);
         }
         .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
@@ -141,42 +128,45 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="nav-container">
-            <a href="index-en.html" class="logo"><span></span>Lemonade For All</a>
-            <div class="nav-right">
-                <a href="project2.html" class="btn-lang">KR</a>
-                <a href="index-en.html" class="back-btn">← Home</a>
-            </div>
+
+<header>
+    <div class="nav-container">
+        <a href="index-en.html" class="logo"><span></span>Lemonade For All</a>
+        <div class="nav-right">
+            <a href="project2.html" class="btn-lang">KR</a>
+            <a href="index-en.html" class="back-btn">← Home</a>
         </div>
-    </header>
-    <main>
-        <div class="project-hero">
-            <span class="hero-label">Education</span>
-            <h1>Dreaming Yellow Class</h1>
-            <p>Providing equal digital education opportunities for all children.</p>
-        </div>
-        <div class="content-wrap">
-            <article>
-                <h2>About the Project</h2>
-                <p>For children in areas lacking IT infrastructure, mentors visit to provide coding and digital literacy education. We help them grow as leaders of the digital age.</p>
-                <h2>Key Activities</h2>
-                <ul>
-                    <li>After-school coding classes every Wed/Fri</li>
-                    <li>1:1 career mentoring programs</li>
-                    <li>Providing latest tablets and software</li>
-                    <li>Annual 'Junior Creative Software Competition'</li>
-                </ul>
-                <div class="action-area">
-                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Support Their Dreams!</h3>
-                    <p>Your support changes a child's future.</p>
-                    <a href="donate-en.html" class="btn">Support This Project</a>
-                </div>
-            </article>
-        </div>
-    </main>
-    <footer style="text-align: center; padding: 4rem 2rem; color: var(--text-muted); font-size: 0.9rem;">
-        © 2026 Lemonade For All Foundation. All rights reserved.
-    </footer>
+    </div>
+</header>
+
+<section class="project-hero">
+    <div class="hero-label">Education</div>
+    <h1>Dreaming Yellow Class</h1>
+    <p>Providing equal digital education opportunities for all children.</p>
+</section>
+
+<div class="content-wrap">
+    <h2>About the Project</h2>
+    <p>For children in areas lacking IT infrastructure, mentors visit to provide coding and digital literacy education. We help them grow as leaders of the digital age.</p>
+
+    <h2>Key Activities</h2>
+    <ul>
+        <li>After-school coding classes every Wed/Fri</li>
+        <li>1:1 career mentoring programs</li>
+        <li>Providing latest tablets and software</li>
+        <li>Annual 'Junior Creative Software Competition'</li>
+    </ul>
+
+    <div class="action-area">
+        <h3 style="font-size: 1.4rem; margin-bottom: 1rem; color: var(--secondary);">Support Their Dreams!</h3>
+        <p>Your support changes a child's future.</p>
+        <a href="donate-en.html" class="btn">Support This Project</a>
+    </div>
+</div>
+
+<footer style="text-align: center; padding: 4rem 2rem; color: var(--text-muted); font-size: 0.9rem;">
+    &copy; 2026 Lemonade For All Foundation. All rights reserved.
+</footer>
+
 </body>
 </html>
