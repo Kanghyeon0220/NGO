@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Urban Green Campaign | Lemonade For All Foundation</title>
-    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
     <style>
         html { scroll-behavior: smooth; }
         :root {
@@ -27,54 +27,34 @@
         }
         a { text-decoration: none; color: inherit; }
         header {
-            position: fixed;
-            top: 0;
-            width: 100%;
+            position: fixed; top: 0; width: 100%;
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(20px);
             z-index: 1000;
             border-bottom: 1px solid rgba(0,0,0,0.05);
         }
         .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            max-width: 1200px; margin: 0 auto; padding: 1rem 2rem;
+            display: flex; justify-content: space-between; align-items: center;
         }
         .logo {
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: var(--secondary);
-            display: flex;
-            align-items: center;
+            font-size: 1.4rem; font-weight: 800; color: var(--secondary);
+            display: flex; align-items: center;
         }
         .logo span {
-            width: 12px;
-            height: 12px;
-            background: var(--accent);
-            border-radius: 50%;
-            margin-right: 10px;
+            width: 12px; height: 12px; background: var(--accent);
+            border-radius: 50%; margin-right: 10px;
         }
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
+        .nav-right { display: flex; align-items: center; gap: 1.5rem; }
         .btn-lang {
-            font-weight: 700;
-            font-size: 0.85rem;
+            font-weight: 700; font-size: 0.85rem;
             padding: 0.4rem 0.8rem;
             border: 2px solid var(--text-main);
             border-radius: 50px;
             transition: var(--transition);
         }
         .btn-lang:hover { background: var(--primary); }
-        .back-btn {
-            font-weight: 600;
-            color: var(--text-muted);
-        }
+        .back-btn { font-weight: 600; color: var(--text-muted); }
         .back-btn:hover { color: var(--text-main); }
         .project-hero {
             padding: 12rem 2rem 6rem;
@@ -87,15 +67,13 @@
             background: var(--white);
             padding: 0.5rem 1.2rem;
             border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 800;
+            font-size: 0.9rem; font-weight: 800;
             color: var(--secondary);
             margin-bottom: 1.5rem;
             display: inline-block;
         }
         .project-hero h1 {
-            font-size: 3.5rem;
-            font-weight: 900;
+            font-size: 3.5rem; font-weight: 900;
             color: var(--secondary);
             margin-bottom: 1rem;
             letter-spacing: -1px;
@@ -109,17 +87,12 @@
             box-shadow: var(--shadow);
         }
         h2 {
-            font-size: 1.8rem;
-            margin: 2.5rem 0 1.2rem;
+            font-size: 1.8rem; margin: 2.5rem 0 1.2rem;
             color: var(--secondary);
             display: inline-block;
             border-bottom: 4px solid var(--accent);
         }
-        p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-        }
+        p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 1.5rem; }
         ul { list-style: none; margin-bottom: 2.5rem; }
         li {
             position: relative;
@@ -127,7 +100,11 @@
             margin-bottom: 1rem;
             font-size: 1.1rem;
         }
-        li::before { content: ''; position: absolute; left: 0; }
+        li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+        }
         .action-area {
             text-align: center;
             margin-top: 5rem;
@@ -140,8 +117,7 @@
             color: var(--primary);
             padding: 1rem 3rem;
             border-radius: 50px;
-            font-weight: 800;
-            font-size: 1.1rem;
+            font-weight: 800; font-size: 1.1rem;
             transition: var(--transition);
         }
         .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
@@ -152,43 +128,45 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="nav-container">
-            <a href="index-en.html" class="logo"><span></span>Lemonade For All</a>
-            <div class="nav-right">
-                <a href="project1.html" class="btn-lang">KOR</a>
-                <a href="index-en.html" class="back-btn">&larr; Home</a>
-            </div>
-        </div>
-    </header>
 
-    <section class="project-hero">
-        <div class="hero-label">Environment</div>
-        <h1>Urban Green Campaign</h1>
-        <p>Cleaning our streets with our own hands.</p>
-    </section>
-
-    <div class="content-wrap">
-        <h2>About the Project</h2>
-        <p>Every weekend, high school students gather for plogging (picking up trash while jogging) in urban areas. We don't just pick up trash; we record waste data to create an 'Environmental Vulnerability Map' for our neighborhood.</p>
-
-        <h2>Key Activities</h2>
-        <ul>
-            <li>Plogging every Saturday at 10 AM</li>
-            <li>Waste data classification and digital mapping</li>
-            <li>Waste separation campaigns for residents</li>
-            <li>Annual environmental reports and policy proposals</li>
-        </ul>
-
-        <div class="action-area">
-            <h3 style="font-size:1.5rem; margin-bottom:1rem; color:var(--text-main);">Support Our Activities!</h3>
-            <p>Small donations create a bigger lemonade effect.</p>
-            <a href="donate-en.html" class="btn">Support This Project</a>
+<header>
+    <div class="nav-container">
+        <a href="index-en.html" class="logo"><span></span>Lemonade For All</a>
+        <div class="nav-right">
+            <a href="project1.html" class="btn-lang">KR</a>
+            <a href="index-en.html" class="back-btn">← Home</a>
         </div>
     </div>
+</header>
 
-    <footer style="text-align: center; padding: 4rem 2rem; color: var(--text-muted); font-size: 0.9rem;">
-        &copy; 2026 Lemonade For All Foundation. All rights reserved.
-    </footer>
+<section class="project-hero">
+    <div class="hero-label">Environment Campaign</div>
+    <h1>Urban Green Campaign</h1>
+    <p>Cleaning our streets with our own hands.</p>
+</section>
+
+<div class="content-wrap">
+    <h2>About the Project</h2>
+    <p>Every weekend, high school students gather for plogging (picking up trash while jogging) in urban areas. We don't just pick up trash; we record waste data to create an 'Environmental Vulnerability Map' for our neighborhood.</p>
+
+    <h2>Key Activities</h2>
+    <ul>
+        <li>Plogging every Saturday at 10 AM</li>
+        <li>Waste data classification and digital mapping</li>
+        <li>Waste separation campaigns for residents</li>
+        <li>Annual environmental maps and policy proposals</li>
+    </ul>
+
+    <div class="action-area">
+        <h3 style="font-size: 1.4rem; margin-bottom: 1rem; color: var(--secondary);">Support Our Activities!</h3>
+        <p>Small donations create a bigger lemonade effect.</p>
+        <a href="donate-en.html" class="btn">Support This Project</a>
+    </div>
+</div>
+
+<footer style="text-align: center; padding: 4rem 2rem; color: var(--text-muted); font-size: 0.9rem;">
+    &copy; 2026 Lemonade For All Foundation. All rights reserved.
+</footer>
+
 </body>
 </html>
