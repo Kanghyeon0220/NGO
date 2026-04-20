@@ -29,6 +29,16 @@
             font-size: 1.4rem; font-weight: 800;
             color: #000; text-decoration: none;
         }
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .btn-lang {
+            font-weight: 700; font-size: 0.85rem; padding: 0.4rem 0.8rem;
+            border: 2px solid #F4D060; border-radius: 50px;
+            color: #F4D060; text-decoration: none;
+        }
         .back-btn {
             color: #666; text-decoration: none;
             font-weight: 600;
@@ -116,7 +126,10 @@
     <header>
         <div class="nav-container">
             <a href="index.html" class="logo">Lemonade For All</a>
-            <a href="index.html" class="back-btn">← 홈으로</a>
+            <div class="nav-right">
+                <a href="index.html" class="back-btn">← 홈으로</a>
+                <a href="project1-en.html" class="btn-lang">EN</a>
+            </div>
         </div>
     </header>
 
