@@ -12,8 +12,8 @@
             --secondary: #F4D060;
             --accent: #FFD200;
             --bg-warm: #FFFEF0;
-                    --text-main: #000000;
-                    --text-muted: #000000;
+            --text-main: #000000;
+            --text-muted: #000000;
             --white: #FFFFFF;
             --shadow: 0 4px 20px rgba(0,0,0,0.06);
             --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -38,7 +38,7 @@
             display: flex; justify-content: space-between; align-items: center;
         }
         .logo {
-                    font-size: 1.6rem; font-weight: 800; color: #000000;
+            font-size: 1.6rem; font-weight: 800; color: #000000;
             text-decoration: none; letter-spacing: -0.02em;
         }
         .nav-right { display: flex; align-items: center; gap: 1.5rem; }
@@ -49,18 +49,15 @@
         }
         .nav-links a:hover { color: var(--secondary); }
         .btn-lang {
-            font-weight: 700; font-size: 0.85rem;
-            padding: 0.4rem 0.8rem;
-            border: 2px solid var(--secondary);
-            border-radius: 50px; color: var(--secondary);
-            text-decoration: none; transition: var(--transition);
+            font-weight: 700; font-size: 0.85rem; padding: 0.4rem 0.8rem;
+            border: 2px solid var(--secondary); border-radius: 50px;
+            color: var(--secondary); text-decoration: none; transition: var(--transition);
         }
         .btn-lang:hover { background: var(--primary); }
         .btn-donate {
             background-color: #F4D060; color: var(--text-main) !important;
             padding: 0.8rem 1.8rem; border-radius: 50px;
-            font-weight: 700 !important; text-decoration: none;
-            transition: var(--transition);
+            font-weight: 700 !important; text-decoration: none; transition: var(--transition);
         }
         .btn-donate:hover { transform: translateY(-2px); box-shadow: 0 8px 15px rgba(255, 210, 0, 0.3); }
         .mobile-menu-btn {
@@ -75,19 +72,19 @@
         }
         .hero h1 {
             font-size: 4rem; font-weight: 800; margin-bottom: 1.5rem;
-                    line-height: 1.2; letter-spacing: -0.03em; color: #000000;
+            line-height: 1.2; letter-spacing: -0.03em; color: #000000;
         }
         .hero p { font-size: 1.3rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 3rem; }
         .section-padding { padding: 8rem 2rem; }
         .container { max-width: 1200px; margin: 0 auto; }
-                .section-title { font-size: 2.5rem; font-weight: 800; text-align: center; margin-bottom: 4rem; color: #000000; }
+        .section-title { font-size: 2.5rem; font-weight: 800; text-align: center; margin-bottom: 4rem; color: #000000; }
         .mission-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
         .mission-card {
             background: var(--bg-warm); padding: 3rem 2rem;
             border-radius: 24px; text-align: center; transition: var(--transition);
         }
         .mission-card:hover { transform: translateY(-10px); box-shadow: var(--shadow); }
-                .mission-card h3 { font-size: 1.4rem; margin-bottom: 1rem; color: #000000; }
+        .mission-card h3 { font-size: 1.4rem; margin-bottom: 1rem; color: #000000; }
         .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; }
         .project-card {
             background: var(--white); border-radius: 30px; padding: 3.5rem;
@@ -97,21 +94,36 @@
         .project-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); border-color: transparent; }
         .project-meta {
             color: var(--secondary); font-weight: 700; font-size: 0.9rem;
-            text-transform: uppercase; letter-spacing: 0.1em;
-            margin-bottom: 1rem; display: block;
+            text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; display: block;
         }
-                .project-card h3 { font-size: 2rem; margin-bottom: 1rem; color: #000000; }
+        .project-card h3 { font-size: 2rem; margin-bottom: 1rem; color: #000000; }
         .project-card p { color: var(--text-muted); margin-bottom: 2rem; font-size: 1.1rem; }
-        .progress-bar { width: 100%; height: 12px; background: #eee; border-radius: 10px; overflow: hidden; margin-bottom: 0.8rem; }
-        .progress-fill { height: 100%; background: var(--accent); border-radius: 10px; transition: width 1s ease-in-out; }
-        .progress-text { display: flex; justify-content: space-between; font-size: 0.95rem; font-weight: 600; color: var(--text-muted); }
+        .progress-bar {
+            width: 100%; height: 12px; background: #eee;
+            border-radius: 10px; overflow: hidden; margin-bottom: 0.8rem;
+        }
+        .progress-fill {
+            height: 100%; background: var(--accent);
+            border-radius: 10px; transition: width 1s ease-in-out;
+        }
+        .progress-text {
+            display: flex; justify-content: space-between;
+            font-size: 0.95rem; font-weight: 600; color: var(--text-muted);
+        }
         footer { background: var(--bg-warm); padding: 6rem 2rem 3rem; text-align: center; }
         .footer-content { max-width: 600px; margin: 0 auto; }
-                .footer-logo { font-size: 2rem; font-weight: 800; color: #000000; text-decoration: none; display: block; margin-bottom: 1rem; }
+        .footer-logo {
+            font-size: 2rem; font-weight: 800; color: #000000;
+            text-decoration: none; display: block; margin-bottom: 1rem;
+        }
         .contact-info { margin-top: 2rem; display: flex; justify-content: center; gap: 2rem; }
         .contact-info a { color: var(--text-main); text-decoration: none; font-weight: 600; }
         @media (max-width: 768px) {
-            .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: white; padding: 2rem; gap: 1.5rem; border-bottom: 1px solid #eee; }
+            .nav-links {
+                display: none; flex-direction: column; position: absolute;
+                top: 100%; left: 0; width: 100%; background: white;
+                padding: 2rem; gap: 1.5rem; border-bottom: 1px solid #eee;
+            }
             .nav-links.active { display: flex; }
             .mobile-menu-btn { display: block; }
             .hero h1 { font-size: 2.8rem; }
@@ -123,28 +135,28 @@
 <body>
 
 <header>
-    <div class="nav-container">
+    <nav class="nav-container">
         <a href="index.html" class="logo">Lemonade For All</a>
         <div class="nav-right">
-            <nav class="nav-links" id="navLinks">
-                <a href="#about">재단 소개</a>
-                <a href="#projects">캠페인</a>
-                <a href="#contact">문의하기</a>
-                <a href="donate.html" class="btn-donate">후원하기</a>
-            </nav>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">재단 소개</a></li>
+                <li><a href="#projects">캠페인</a></li>
+                <li><a href="#contact">문의하기</a></li>
+                <li><a href="donate.html" class="btn-donate">후원하기</a></li>
+            </ul>
             <a href="index-en.html" class="btn-lang">EN</a>
             <button class="mobile-menu-btn" id="mobileMenuBtn">Menu</button>
         </div>
-    </div>
+    </nav>
 </header>
 
 <section class="hero">
-    <h1>작은 변화가<br>만드는 큰 물결</h1>
+    <h1>작은 변화가 <br>만드는 큰 물결</h1>
     <p>우리는 누구나 세상을 바꿀 수 있다고 믿습니다.<br>여러분의 작은 참여가 모여 더 나은 내일을 만듭니다.</p>
     <a href="donate.html" class="btn-donate">함께하기</a>
 </section>
 
-<section class="section-padding" id="about">
+<section id="about" class="section-padding">
     <div class="container">
         <h2 class="section-title">우리의 미션</h2>
         <div class="mission-grid">
@@ -164,7 +176,7 @@
     </div>
 </section>
 
-<section class="section-padding" id="projects" style="background: var(--bg-warm);">
+<section id="projects" class="section-padding" style="background: var(--bg-warm);">
     <div class="container">
         <h2 class="section-title">진행중인 우리의 프로젝트</h2>
         <div class="projects-grid">
@@ -172,10 +184,16 @@
                 <span class="project-meta">Project 01</span>
                 <h3>도심 속 그린 캠페인</h3>
                 <p>버려진 공터를 지역 주민들의 휴식처이자 다양한 생물들의 보금자리로 탈바꿈시킵니다.</p>
-                
+                <div class="progress-bar"><div class="progress-fill" style="width: 75%"></div></div>
+                <div class="progress-text"><span>75% 달성</span><span>목표 ₩6,500,000</span></div>
+            </a>
             <a href="project2.html" class="project-card">
+                <span class="project-meta">Project 02</span>
+                <h3>꿈꾸는 노란 교실</h3>
                 <p>교육 사각지대에 놓인 아이들에게 양질의 멘토링과 IT 교육의 기회를 제공합니다.</p>
-                
+                <div class="progress-bar"><div class="progress-fill" style="width: 40%"></div></div>
+                <div class="progress-text"><span>40% 달성</span><span>목표 ₩13,000,000</span></div>
+            </a>
         </div>
     </div>
 </section>
@@ -183,13 +201,13 @@
 <footer id="contact">
     <div class="footer-content">
         <a href="index.html" class="footer-logo">Lemonade For All</a>
-                <p style="color: var(--text-muted);">인생이 레몬을 준다면, 레모네이드를 만들어요.</p>
+        <p style="color: var(--text-muted);">인생이 레몬을 준다면, 레모네이드를 만들어요.</p>
         <div class="contact-info">
             <a href="mailto:lfageneralx@gmail.com">lfageneralx@gmail.com</a>
             <a href="https://www.instagram.com/lemonade_forall">@lemonade_forall</a>
         </div>
-        <p style="margin-top: 3rem; color: var(--text-muted); font-size: 0.9rem;">&copy; 2026 Lemonade For All Foundation. 모든 권리 보유.</p>
     </div>
+    <p style="margin-top: 3rem; color: var(--text-muted); font-size: 0.9rem;">&copy; 2026 Lemonade For All Foundation. 모든 권리 보유.</p>
 </footer>
 
 <script>
