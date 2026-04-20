@@ -3,170 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Urban Green Campaign | Lemonade For All Foundation</title>
-    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+    <title>Urban Green Campaign | Lemonade For All</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
     <style>
-        html { scroll-behavior: smooth; }
-        :root {
-            --primary: #FBF7D7;
-            --secondary: #F4D060;
-            --accent: #FFD200;
-            --bg-warm: #FFFEF0;
-            --text-main: #1a1a1a;
-            --text-muted: #333333;
-            --white: #FFFFFF;
-            --shadow: 0 4px 20px rgba(0,0,0,0.06);
-            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
-            color: var(--text-main);
-            line-height: 1.8;
-            background-color: var(--bg-warm);
-        }
-        a { text-decoration: none; color: inherit; }
-        header {
-            position: fixed; top: 0; width: 100%;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-        .nav-container {
-            max-width: 1200px; margin: 0 auto; padding: 1rem 2rem;
-            display: flex; justify-content: space-between; align-items: center;
-        }
-        .logo {
-            font-size: 1.4rem; font-weight: 800; color: var(--secondary);
-            display: flex; align-items: center;
-        }
-        .logo span {
-            width: 12px; height: 12px; background: var(--accent);
-            border-radius: 50%; margin-right: 10px;
-        }
-        .nav-right { display: flex; align-items: center; gap: 1.5rem; }
-        .btn-lang {
-            font-weight: 700; font-size: 0.85rem;
-            padding: 0.4rem 0.8rem;
-            border: 2px solid var(--text-main);
-            border-radius: 50px;
-            transition: var(--transition);
-        }
-        .btn-lang:hover { background: var(--primary); }
-        .back-btn { font-weight: 600; color: var(--text-muted); }
-        .back-btn:hover { color: var(--text-main); }
-        .project-hero {
-            padding: 12rem 2rem 6rem;
-            background: var(--primary);
-            text-align: center;
-            border-bottom-left-radius: 50px;
-            border-bottom-right-radius: 50px;
-        }
-        .hero-label {
-            background: var(--white);
-            padding: 0.5rem 1.2rem;
-            border-radius: 50px;
-            font-size: 0.9rem; font-weight: 800;
-            color: var(--secondary);
-            margin-bottom: 1.5rem;
-            display: inline-block;
-        }
-        .project-hero h1 {
-            font-size: 3.5rem; font-weight: 900;
-            color: var(--secondary);
-            margin-bottom: 1rem;
-            letter-spacing: -1px;
-        }
-        .content-wrap {
-            max-width: 800px;
-            margin: -4rem auto 100px;
-            background: var(--white);
-            padding: 4rem;
-            border-radius: 30px;
-            box-shadow: var(--shadow);
-        }
-        h2 {
-            font-size: 1.8rem; margin: 2.5rem 0 1.2rem;
-            color: var(--secondary);
-            display: inline-block;
-            border-bottom: 4px solid var(--accent);
-        }
-        p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 1.5rem; }
-        ul { list-style: none; margin-bottom: 2.5rem; }
-        li {
-            position: relative;
-            padding-left: 2rem;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-        li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-        }
-        .action-area {
-            text-align: center;
-            margin-top: 5rem;
-            padding-top: 3rem;
-            border-top: 1px solid #eee;
-        }
-        .btn {
-            display: inline-block;
-            background: var(--text-main);
-            color: var(--primary);
-            padding: 1rem 3rem;
-            border-radius: 50px;
-            font-weight: 800; font-size: 1.1rem;
-            transition: var(--transition);
-        }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        @media (max-width: 768px) {
-            .project-hero h1 { font-size: 2.5rem; }
-            .content-wrap { padding: 2.5rem; margin-top: -2rem; }
-        }
+        body { font-family: 'Pretendard', sans-serif; line-height: 1.7; color: #000; background: #FFFEF0; }
+        header { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); z-index: 100; border-bottom: 1px solid #eee; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 1.2rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.4rem; font-weight: 800; color: #000; text-decoration: none; }
+        .back-btn { color: #666; text-decoration: none; font-weight: 600; }
+        .back-btn:hover { color: #000; }
+        .hero { padding: 10rem 2rem 5rem; background: #FBF7D7; text-align: center; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; }
+        .hero h1 { font-size: 3.5rem; font-weight: 900; color: #000; margin-bottom: 1.5rem; }
+        .hero .meta { color: #666; font-size: 1.1rem; }
+        .content { max-width: 900px; margin: -3rem auto 100px; background: white; padding: 4rem; border-radius: 30px; box-shadow: 0 4px 30px rgba(0,0,0,0.08); }
+        .section { margin-bottom: 4rem; }
+        h2 { font-size: 2rem; margin-bottom: 1.5rem; color: #000; border-left: 5px solid #FFD200; padding-left: 1rem; }
+        p { font-size: 1.1rem; line-height: 1.9; color: #333; margin-bottom: 1.5rem; }
+        .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin: 2rem 0; }
+        .gallery-item { aspect-ratio: 16/10; background: #f5f5f5; border-radius: 20px; display: flex; align-items: center; justify-content: center; color: #999; font-size: 0.9rem; }
+        .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 3rem 0; }
+        .stat-card { text-align: center; padding: 2rem; background: #FFFEF0; border-radius: 20px; }
+        .stat-card .number { font-size: 2.5rem; font-weight: 900; color: #FFD200; margin-bottom: 0.5rem; }
+        .stat-card .label { font-size: 1rem; color: #666; }
+        ul { list-style: none; margin: 1.5rem 0; }
+        li { padding-left: 1.8rem; position: relative; margin-bottom: 1rem; font-size: 1.1rem; }
+        li:before { content: '✓'; position: absolute; left: 0; color: #FFD200; font-weight: bold; }
+        footer { text-align: center; padding: 3rem; color: #999; font-size: 0.9rem; }
+        @media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } .content { padding: 2.5rem; } .gallery { grid-template-columns: 1fr; } .stats { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
+    <header>
+        <div class="nav-container">
+            <a href="index-en.html" class="logo">Lemonade For All</a>
+            <a href="index-en.html" class="back-btn">← Back to Home</a>
+        </div>
+    </header>
 
-<header>
-    <div class="nav-container">
-        <a href="index-en.html" class="logo"><span></span>Lemonade For All</a>
-        <div class="nav-right">
-            <a href="project1.html" class="btn-lang">KR</a>
-            <a href="index-en.html" class="back-btn">← Home</a>
+    <section class="hero">
+        <h1>Urban Green Campaign</h1>
+        <p class="meta">March - August 2025 | Environmental Project</p>
+    </section>
+
+    <div class="content">
+        <div class="section">
+            <h2>Project Overview</h2>
+            <p>The 6-month 'Urban Green Campaign' transformed abandoned urban lots into recreational spaces for residents and ecological habitats for wildlife. Every week, volunteers collected waste, planted trees, and created ecological parks.</p>
+        </div>
+
+        <div class="section">
+            <h2>Project Results</h2>
+            <div class="stats">
+                <div class="stat-card"><div class="number">850kg</div><div class="label">Waste Collected</div></div>
+                <div class="stat-card"><div class="number">320</div><div class="label">Volunteers</div></div>
+                <div class="stat-card"><div class="number">45</div><div class="label">Trees Planted</div></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Activity Photos</h2>
+            <div class="gallery">
+                <div class="gallery-item">[Volunteers collecting waste]</div>
+                <div class="gallery-item">[Completed ecological park]</div>
+                <div class="gallery-item">[Planting trees with children]</div>
+                <div class="gallery-item">[Residents in finished space]</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Key Activities</h2>
+            <ul>
+                <li>Regular plogging sessions every Saturday (24 total)</li>
+                <li>Waste classification and recycling</li>
+                <li>Tree planting events with local residents (3 events)</li>
+                <li>Ecological park creation: benches, walkways, flower beds</li>
+                <li>Environmental education campaigns</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Participant Testimonials</h2>
+            <p><strong>Minsu Kim (University Student):</strong> "It was rewarding to see the space change every week. Amazing how an abandoned lot became this beautiful."</p>
+            <p><strong>Jieun Lee (Local Resident):</strong> "Now we have a clean space for our kids. Thank you to all who participated."</p>
+        </div>
+
+        <div class="section">
+            <h2>Future Plans</h2>
+            <p>Building on this success, we plan to expand in 2026 to more urban spaces, creating community-driven ecological parks. Our efforts for sustainable urban environments continue.</p>
         </div>
     </div>
-</header>
 
-<section class="project-hero">
-    <div class="hero-label">Environment Campaign</div>
-    <h1>Urban Green Campaign</h1>
-    <p>Cleaning our streets with our own hands.</p>
-</section>
-
-<div class="content-wrap">
-    <h2>About the Project</h2>
-    <p>Every weekend, high school students gather for plogging (picking up trash while jogging) in urban areas. We don't just pick up trash; we record waste data to create an 'Environmental Vulnerability Map' for our neighborhood.</p>
-
-    <h2>Key Activities</h2>
-    <ul>
-        <li>Plogging every Saturday at 10 AM</li>
-        <li>Waste data classification and digital mapping</li>
-        <li>Waste separation campaigns for residents</li>
-        <li>Annual environmental maps and policy proposals</li>
-    </ul>
-
-    <div class="action-area">
-        <h3 style="font-size: 1.4rem; margin-bottom: 1rem; color: var(--secondary);">Support Our Activities!</h3>
-        <p>Small donations create a bigger lemonade effect.</p>
-        <a href="donate-en.html" class="btn">Support This Project</a>
-    </div>
-</div>
-
-<footer style="text-align: center; padding: 4rem 2rem; color: var(--text-muted); font-size: 0.9rem;">
-    &copy; 2026 Lemonade For All Foundation. All rights reserved.
-</footer>
-
+    <footer>© 2026 Lemonade For All Foundation. All rights reserved.</footer>
 </body>
 </html>
