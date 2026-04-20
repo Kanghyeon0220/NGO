@@ -3,170 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>껼꾸는 노랑 교실 | Lemonade For All Foundation</title>
-    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+    <title>꿈꾸는 노랑 교실 | Lemonade For All</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
     <style>
-        html { scroll-behavior: smooth; }
-        :root {
-            --primary: #FBF7D7;
-            --secondary: #F4D060;
-            --accent: #FFD200;
-            --bg-warm: #FFFEF0;
-            --text-main: #1a1a1a;
-            --text-muted: #333333;
-            --white: #FFFFFF;
-            --shadow: 0 4px 20px rgba(0,0,0,0.06);
-            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
-            color: var(--text-main);
-            line-height: 1.8;
-            background-color: var(--bg-warm);
+            font-family: 'Pretendard', sans-serif;
+            line-height: 1.7; color: #000;
+            background: #FFFEF0;
         }
-        a { text-decoration: none; color: inherit; }
         header {
             position: fixed; top: 0; width: 100%;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px); z-index: 100;
+            border-bottom: 1px solid #eee;
         }
         .nav-container {
-            max-width: 1200px; margin: 0 auto; padding: 1rem 2rem;
-            display: flex; justify-content: space-between; align-items: center;
+            max-width: 1200px; margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         .logo {
-            font-size: 1.4rem; font-weight: 800; color: var(--secondary);
-            display: flex; align-items: center;
+            font-size: 1.4rem; font-weight: 800;
+            color: #000; text-decoration: none;
         }
-        .logo span {
-            width: 12px; height: 12px; background: var(--accent);
-            border-radius: 50%; margin-right: 10px;
+        .back-btn {
+            color: #666; text-decoration: none;
+            font-weight: 600;
         }
-        .nav-right { display: flex; align-items: center; gap: 1.5rem; }
-        .btn-lang {
-            font-weight: 700; font-size: 0.85rem;
-            padding: 0.4rem 0.8rem;
-            border: 2px solid var(--text-main);
-            border-radius: 50px;
-            transition: var(--transition);
-        }
-        .btn-lang:hover { background: var(--primary); }
-        .back-btn { font-weight: 600; color: var(--text-muted); }
-        .back-btn:hover { color: var(--text-main); }
-        .project-hero {
-            padding: 12rem 2rem 6rem;
-            background: var(--primary);
+        .back-btn:hover { color: #000; }
+        .hero {
+            padding: 10rem 2rem 5rem;
+            background: #FBF7D7;
             text-align: center;
             border-bottom-left-radius: 50px;
             border-bottom-right-radius: 50px;
         }
-        .hero-label {
-            background: var(--white);
-            padding: 0.5rem 1.2rem;
-            border-radius: 50px;
-            font-size: 0.9rem; font-weight: 800;
-            color: var(--secondary);
-            margin-bottom: 1.5rem;
-            display: inline-block;
-        }
-        .project-hero h1 {
+        .hero h1 {
             font-size: 3.5rem; font-weight: 900;
-            color: var(--secondary);
-            margin-bottom: 1rem;
-            letter-spacing: -1px;
+            color: #000; margin-bottom: 1.5rem;
         }
-        .content-wrap {
-            max-width: 800px;
-            margin: -4rem auto 100px;
-            background: var(--white);
-            padding: 4rem;
+        .hero .meta {
+            color: #666; font-size: 1.1rem;
+        }
+        .content {
+            max-width: 900px; margin: -3rem auto 100px;
+            background: white; padding: 4rem;
             border-radius: 30px;
-            box-shadow: var(--shadow);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.08);
         }
+        .section { margin-bottom: 4rem; }
         h2 {
-            font-size: 1.8rem; margin: 2.5rem 0 1.2rem;
-            color: var(--secondary);
-            display: inline-block;
-            border-bottom: 4px solid var(--accent);
+            font-size: 2rem; margin-bottom: 1.5rem;
+            color: #000; border-left: 5px solid #FFD200;
+            padding-left: 1rem;
         }
-        p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 1.5rem; }
-        ul { list-style: none; margin-bottom: 2.5rem; }
+        p {
+            font-size: 1.1rem; line-height: 1.9;
+            color: #333; margin-bottom: 1.5rem;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem; margin: 2rem 0;
+        }
+        .gallery-item {
+            aspect-ratio: 16/10; background: #f5f5f5;
+            border-radius: 20px; display: flex;
+            align-items: center; justify-content: center;
+            color: #999; font-size: 0.9rem;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem; margin: 3rem 0;
+        }
+        .stat-card {
+            text-align: center; padding: 2rem;
+            background: #FFFEF0; border-radius: 20px;
+        }
+        .stat-card .number {
+            font-size: 2.5rem; font-weight: 900;
+            color: #FFD200; margin-bottom: 0.5rem;
+        }
+        .stat-card .label {
+            font-size: 1rem; color: #666;
+        }
+        ul { list-style: none; margin: 1.5rem 0; }
         li {
-            position: relative;
-            padding-left: 2rem;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
+            padding-left: 1.8rem; position: relative;
+            margin-bottom: 1rem; font-size: 1.1rem;
         }
-        li::before {
-            content: '';
-            position: absolute;
-            left: 0;
+        li:before {
+            content: '✓'; position: absolute; left: 0;
+            color: #FFD200; font-weight: bold;
         }
-        .action-area {
-            text-align: center;
-            margin-top: 5rem;
-            padding-top: 3rem;
-            border-top: 1px solid #eee;
+        footer {
+            text-align: center; padding: 3rem;
+            color: #999; font-size: 0.9rem;
         }
-        .btn {
-            display: inline-block;
-            background: var(--text-main);
-            color: var(--primary);
-            padding: 1rem 3rem;
-            border-radius: 50px;
-            font-weight: 800; font-size: 1.1rem;
-            transition: var(--transition);
-        }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
         @media (max-width: 768px) {
-            .project-hero h1 { font-size: 2.5rem; }
-            .content-wrap { padding: 2.5rem; margin-top: -2rem; }
+            .hero h1 { font-size: 2.5rem; }
+            .content { padding: 2.5rem; }
+            .gallery { grid-template-columns: 1fr; }
+            .stats { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-
-<header>
-    <div class="nav-container">
-        <a href="index.html" class="logo"><span></span>Lemonade For All</a>
-        <div class="nav-right">
-            <a href="project2-en.html" class="btn-lang">EN</a>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Lemonade For All</a>
             <a href="index.html" class="back-btn">← 홈으로</a>
         </div>
+    </header>
+
+    <section class="hero">
+        <h1>꿈꾸는 노랑 교실</h1>
+        <p class="meta">2025년 4월 - 12월 | 디지털 교육 지원 프로젝트</p>
+    </section>
+
+    <div class="content">
+        <div class="section">
+            <h2>프로젝트 개요</h2>
+            <p>'꿈꾸는 노랑 교실'은 IT 교육 인프라가 부족한 지역의 아동들에게 코딩과 디지털 리터러시 교육을 제공하는 프로젝트입니다. 대학생 및 전문가 멘토들이 직접 찾아가 1:1 맞춤형 교육을 진행했습니다.</p>
+        </div>
+
+        <div class="section">
+            <h2>프로젝트 성과</h2>
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="number">85명</div>
+                    <div class="label">참여 학생</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">35명</div>
+                    <div class="label">멘토 자원봉사자</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">120회</div>
+                    <div class="label">총 교육 세션</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>활동 사진</h2>
+            <div class="gallery">
+                <div class="gallery-item">[아이들이 코딩을 배우는 모습]</div>
+                <div class="gallery-item">[멘토와 함께하는 프로젝트 발표]</div>
+                <div class="gallery-item">[태블릿으로 학습 중인 학생들]</div>
+                <div class="gallery-item">[연말 경진대회 수상자들]</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>주요 활동 내용</h2>
+            <ul>
+                <li>매주 수요일/금요일 방과 후 코딩 교실 (2시간)</li>
+                <li>스크래치, 파이썬 기초부터 웹 개발 입문까지 단계별 교육</li>
+                <li>1:1 맞춤형 멘토링으로 개별 진도 관리</li>
+                <li>교육용 태블릿 및 노트북 제공 (60대)</li>
+                <li>연말 '주니어 창의 소프트웨어 경진대회' 개최</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>참여자 후기</h2>
+            <p><strong>박지훈 (초등 5학년 학생):</strong> "코딩을 처음 배웠을 때는 어려웠는데, 멘토 선생님이 재미있게 가르쳐주셔서 이제 게임도 만들 수 있어요!"</p>
+            <p><strong>김수현 (멘토, 대학생):</strong> "아이들이 매주 성장하는 모습을 보면서 저도 많은 것을 배웠습니다. 어린 친구들의 무한한 가능성을 볼 수 있어 보람 있었어요."</p>
+        </div>
+
+        <div class="section">
+            <h2>앞으로의 계획</h2>
+            <p>프로그램의 성공적인 운영으로 2026년에는 대상 지역을 확대하고, AI 및 데이터 분석 등 고급 커리큘럼도 추가할 예정입니다. 모든 아이들이 디지털 시대의 주역이 될 수 있도록 계속 지원하겠습니다.</p>
+        </div>
     </div>
-</header>
 
-<section class="project-hero">
-    <div class="hero-label">교육 지원</div>
-    <h1>껼꾸는 노랑 교실</h1>
-    <p>모든 아이들에게 평등한 디지털 교육의 기회를 제공합니다.</p>
-</section>
-
-<div class="content-wrap">
-    <h2>프로젝트 소개</h2>
-    <p>IT 교육 인프라가 부족한 지역의 아동들을 위해 대학생 및 전문가 멘토들이 직접 찾아가는 코딩 및 디지털 리터러시 교육을 진행합니다. 아이들이 디지털 시대의 주역으로 성장할 수 있도록 돕습니다.</p>
-
-    <h2>주요 활동</h2>
-    <ul>
-        <li>매주 수요일/금요일 방과 후 코딩 교실</li>
-        <li>1:1 맞춤형 진로 멘토링 프로그램</li>
-        <li>최신 교육용 태블릿 및 소프트웨어 지원</li>
-        <li>연말 '주니어 창의 소프트웨어 경진대회' 개친</li>
-    </ul>
-
-    <div class="action-area">
-        <h3 style="font-size: 1.4rem; margin-bottom: 1rem; color: var(--secondary);">아이들의 껼을 응원해주세요!</h3>
-        <p>여러분의 후원이 아이들의 미래를 바꾸니다.</p>
-        <a href="donate.html" class="btn">프로젝트 후원하기</a>
-    </div>
-</div>
-
-<footer style="text-align: center; padding: 4rem 2rem; color: var(--text-muted); font-size: 0.9rem;">
-    &copy; 2026 Lemonade For All Foundation. 모든 권리 보유.
-</footer>
-
+    <footer>
+        © 2026 Lemonade For All Foundation. 모든 권리 보유.
+    </footer>
 </body>
 </html>
