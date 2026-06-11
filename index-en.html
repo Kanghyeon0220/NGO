@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,8 +12,8 @@
             --secondary: #F4D060;
             --accent: #FFD200;
             --bg-warm: #FFFEF0;
-            --text-main: #1a1a1a;
-            --text-muted: #333333;
+            --text-main: #000000;
+            --text-muted: #000000;
             --white: #FFFFFF;
             --shadow: 0 4px 20px rgba(0,0,0,0.06);
             --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -38,11 +38,14 @@
             display: flex; justify-content: space-between; align-items: center;
         }
         .logo {
-            font-size: 1.6rem; font-weight: 800; color: var(--secondary);
+            font-size: 1.6rem; font-weight: 800; color: #000000;
             text-decoration: none; letter-spacing: -0.02em;
         }
         .nav-right { display: flex; align-items: center; gap: 1.5rem; }
-        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links {
+            display: flex; gap: 2rem; align-items: center;
+            list-style: none; margin: 0; padding: 0;
+        }
         .nav-links a {
             text-decoration: none; color: var(--text-main);
             font-weight: 600; font-size: 1.05rem; transition: var(--transition);
@@ -56,6 +59,7 @@
             color: var(--secondary);
             text-decoration: none;
             transition: var(--transition);
+            order: 99;
         }
         .btn-lang:hover { background: var(--primary); }
         .btn-donate {
@@ -80,7 +84,7 @@
         }
         .hero h1 {
             font-size: 4rem; font-weight: 800; margin-bottom: 1.5rem;
-            line-height: 1.2; letter-spacing: -0.03em; color: var(--secondary);
+            line-height: 1.2; letter-spacing: -0.03em; color: #000000;
         }
         .hero p {
             font-size: 1.3rem; color: var(--text-muted);
@@ -90,7 +94,7 @@
         .container { max-width: 1200px; margin: 0 auto; }
         .section-title {
             font-size: 2.5rem; font-weight: 800; text-align: center;
-            margin-bottom: 4rem; color: var(--secondary);
+            margin-bottom: 4rem; color: #000000;
         }
         .mission-grid {
             display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem;
@@ -100,7 +104,7 @@
             border-radius: 24px; text-align: center; transition: var(--transition);
         }
         .mission-card:hover { transform: translateY(-10px); box-shadow: var(--shadow); }
-        .mission-card h3 { font-size: 1.4rem; margin-bottom: 1rem; color: var(--secondary); }
+        .mission-card h3 { font-size: 1.4rem; margin-bottom: 1rem; color: #000000; }
         .projects-grid {
             display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem;
         }
@@ -115,7 +119,7 @@
             text-transform: uppercase; letter-spacing: 0.1em;
             margin-bottom: 1rem; display: block;
         }
-        .project-card h3 { font-size: 2rem; margin-bottom: 1rem; color: var(--secondary); }
+        .project-card h3 { font-size: 2rem; margin-bottom: 1rem; color: #000000; }
         .project-card p { color: var(--text-muted); margin-bottom: 2rem; font-size: 1.1rem; }
         .progress-bar {
             width: 100%; height: 12px; background: #eee;
@@ -132,7 +136,7 @@
         footer { background: var(--bg-warm); padding: 6rem 2rem 3rem; text-align: center; }
         .footer-content { max-width: 600px; margin: 0 auto; }
         .footer-logo {
-            font-size: 2rem; font-weight: 800; color: var(--secondary);
+            font-size: 2rem; font-weight: 800; color: #000000;
             text-decoration: none; display: block; margin-bottom: 1rem;
         }
         .contact-info {
@@ -145,6 +149,7 @@
                 position: absolute; top: 100%; left: 0;
                 width: 100%; background: white; padding: 2rem;
                 gap: 1.5rem; border-bottom: 1px solid #eee;
+                list-style: none;
             }
             .nav-links.active { display: flex; }
             .mobile-menu-btn { display: block; }
@@ -207,14 +212,14 @@
                 <h3>도심 속 그린 캠페인</h3>
                 <p>버려진 공터를 지역 주민들의 휴식처이자 다양한 생물들의 보금자리로 탈바꿈시킵니다.</p>
                 <div class="progress-bar"><div class="progress-fill" style="width: 75%"></div></div>
-                <div class="progress-text"><span>75% 달성</span><span>$5,000</span></div>
+                <div class="progress-text"><span>75% 달성</span><span>₩6,500,000</span></div>
             </a>
             <a href="project2-en.html" class="project-card">
                 <span class="project-meta">Project 02</span>
                 <h3>꿈꾸는 노란 교실</h3>
                 <p>교육 사각지대에 놓인 아이들에게 양질의 멘토링과 IT 교육의 기회를 제공합니다.</p>
                 <div class="progress-bar"><div class="progress-fill" style="width: 40%"></div></div>
-                <div class="progress-text"><span>40% 달성</span><span>$10,000</span></div>
+                <div class="progress-text"><span>40% 달성</span><span>₩13,000,000</span></div>
             </a>
         </div>
     </div>
